@@ -85,6 +85,28 @@
       - [Question 9](#question-9-2)
       - [Question 10](#question-10-1)
       - [Question 11](#question-11-1)
+  * [Chapter 8 Character Input/Output and Input Validation](#chapter-8-character-input-output-and-input-validation)
+      - [Page 332](#page-332)
+      - [Question 1](#question-1-7)
+      - [Page 333](#page-333)
+      - [Question 2](#question-2-6)
+      - [Question 3](#question-3-6)
+      - [Question 4](#question-4-6)
+      - [Question 5](#question-5-6)
+      - [Question 6](#question-6-6)
+      - [Question 7](#question-7-6)
+      - [Question 8](#question-8-6)
+  * [Chapter 9 Functions](#chapter-9-functions)
+      - [Page 380](#page-380)
+      - [Question 1](#question-1-8)
+- [§ 9.2](#--92)
+  * [Chapter 10 Arrays and Pointers](#chapter-10-arrays-and-pointers)
+      - [Page 439](#page-439)
+      - [Question 1](#question-1-9)
+  * [Chapter 11 Character Strings and String Functions](#chapter-11-character-strings-and-string-functions)
+      - [Page 508](#page-508)
+      - [Question 1](#question-1-10)
+
 
 # C Primer Plus (6th Edition) Study Notes
 
@@ -3143,17 +3165,13 @@ while choice != '5':
     if choice.isdecimal():
         choice = int(choice)
         if choice == 1:
-            basic_salary = RATE_1
-            Clannad(1)
+            Clannad(RATE_1)
         elif choice == 2:
-            basic_salary = RATE_2
-            Clannad(2)
+            Clannad(RATE_2)
         elif choice == 3:
-            basic_salary = RATE_3
-            Clannad(3)
+            Clannad(RATE_3)
         elif choice == 4:
-            basic_salary = RATE_4
-            Clannad(4)
+            Clannad(RATE_4)
         else:
             print("Input the right option, please.")
     else:
@@ -3614,3 +3632,731 @@ while option != 'q':
 
 print('Bye!')
 ```
+
+## Chapter 8 Character Input/Output and Input Validation
+#### Page 332
+Several of the following programs ask for input to be terminated by EOF. If your operating system makes redirection awkward or impossible, use some other test for terminating input, such as reading the & character.
+
+#### Question 1
+Devise a program that counts the number of characters in its input up to the end of file.
+
+**C**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    int count = 0;
+
+    while (getchar() != EOF)
+    {
+        count++;
+    }
+    printf("Character count: %d\n", count);
+
+    return 0;
+}
+```
+
+**Python**
+```Python
+# Reference:
+# https://stackoverflow.com/questions/15599639/what-is-the-perfect-counterpart-in-python-for-while-not-eof
+# File objects are iterable and yield lines until EOF.
+# Using the file object as an iterable uses a buffer to ensure performant reads.
+# You can do the same with the stdin:
+
+import sys
+
+for line in sys.stdin:
+    count = len(line)
+
+print(count)
+```
+
+#### Page 333
+#### Question 2
+Write a program that reads input as a stream of characters untilencountering EOF. Have  
+the program print each input character and its ASCIIdecimal value. Note that characters  
+preceding the space character in theASCII sequence are nonprinting characters.  
+Treat them specially. If thenonprinting character is a newline or tab, print \n or \t,  
+respectively.Otherwise, use control-character notation. For instance, ASCII 1 is Ctrl+A,  
+which can be displayed as ^A. Note that the ASCII value for A is the value for Ctrl+A  
+plus 64. A similar relation holds for the other nonprintingcharacters. Print 10 pairs per  
+line, except start a fresh line each time anewline character is encountered. (Note: The  
+operating system may havespecial interpretations for some control characters and keep  
+them fromreaching the program.)
+
+**C**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    int ch, char_count = 0;
+
+    while ((ch = getchar()) != EOF)
+    {
+        if (ch >= ' ')
+            printf("\'%c\': %d", ch, ch);
+        else if (ch == '\n')
+            printf("\'\\n\': %d", ch);
+        else if (ch == '\t')
+            printf("\'\\t\': %d", ch);
+        else // ascii control characters
+            printf("\'^%c\': %d", ch + 64, ch );
+
+        char_count++;
+        if (char_count % 10 == 0)
+            printf("\n"); // print new line for every 10 characters
+        else
+            printf("  "); // otherwise, print spaces
+    }
+
+    printf("\n");
+
+    return 0;
+}
+```
+
+**Python**
+```Python
+import sys
+
+counter = 0
+
+for line in sys.stdin:
+    for ch in line:
+        counter += 1
+        # Dealing with '\t'
+        if ord(ch) == 9:
+            print(r"'\t': 9", end=' ' if counter % 10 != 0 else '\n')
+        # Dealing with '\n'
+        elif ord(ch) == 10:
+            print(r"'\n': 10")
+        else:
+            print("'%c': %d" % (ch, ord(ch)), end=' ' if counter % 10 != 0 else '\n')
+```
+
+#### Question 3
+Write a program that reads input as a stream of characters untilencountering EOF.  
+Have it report the number of uppercase letters, the numberof lowercase letters, and the  
+number of other characters in the input. Youmay assume that the numeric values for the  
+lowercase letters are sequentialand assume the same for uppercase. Or, more portably,  
+you can useappropriate classification functions from the ctype.h library.
+
+**C**
+```C
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+    int ch;
+    int uppercase_count = 0, lowercase_count = 0, other_count = 0;
+
+    while ((ch = getchar()) != EOF)
+    {
+        if (isupper(ch))
+            uppercase_count++;
+        else if (islower(ch))
+            lowercase_count++;
+        else
+            other_count++;
+    }
+
+    printf("Character Counts\n");
+    printf("Uppercase letters: %d\n", uppercase_count);
+    printf("Lowercase letters: %d\n", lowercase_count);
+    printf("Other: %d\n", other_count);
+
+    return 0;
+}
+```
+
+**Python**
+```Python
+import sys
+
+upper = 0
+lower = 0
+other = 0
+
+for line in sys.stdin:
+    for ch in line:
+        if ch.isupper():
+            upper += 1
+        elif ch.islower():
+            lower += 1
+        else:
+            other += 1
+
+print("Character Counts")
+print(f"Uppercase letters: {upper}")
+print(f"Lowercase letters: {lower}")
+print(f"Other: {other}")
+```
+
+#### Question 4
+Write a program that reads input as a stream of characters untilencountering EOF. Have  
+it report the average number of letters per word.Don’t count whitespace as being letters  
+in a word. Actually, punctuationshouldn’t be counted either, but don’t worry about that  
+now. (If you do wantto worry about it, consider using the ispunct() function from the  
+ctype.hfamily.)
+
+**C**
+```C
+#include <stdio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+int main(void)
+{
+    int ch;
+    bool in_word = false;
+    int letter_count = 0, word_count = 0;
+
+    while ((ch = getchar()) != EOF)
+    {
+        if (isalpha(ch)) // if ch is a letter
+        {
+            letter_count++;
+            // if not currently in a word, then switch state to in word
+            // and increment the word count
+            if (!in_word) 
+            {
+                in_word = true;
+                word_count++;
+            }
+        }
+        // if ch is not a letter, set program state to out of word
+        else 
+            in_word = false;
+    }
+    // divide letter count by word count to get average letters/word
+    printf("Average letters per word: %.2f\n", (float) letter_count / word_count);
+
+    return 0;
+}
+```
+
+**Python**
+```Python
+import sys
+
+letter = 0
+
+for line in sys.stdin:
+    # str.split() without any arguments splits on runs of whitespace characters
+    word = len(line.split())
+
+    for ch in line:
+        if ch.isalpha():
+            letter += 1
+
+print("Average letters per word: %.2f" % (letter / word))
+```
+
+#### Question 5
+Modify the guessing program of Listing 8.4 so that it uses a more intelligent guessing  
+strategy. For example, have the program initially guess50, and have it ask the user  
+whether the guess is high, low, or correct. If,say, the guess is low, have the next guess  
+be halfway between 50 and 100,that is, 75. If that guess is high, let the next guess be  
+halfway between 75and 50, and so on. Using this binary search strategy, the program  
+quicklyzeros in on the correct answer, at least if the user does not cheat.
+
+**C**
+```C
+#include <stdio.h>
+
+int main(void)
+{
+    // initial search parameters
+    int upper_bound = 100;
+    int lower_bound = 0;
+    int guess = 50;
+
+    char ch;
+
+    printf("Pick an integer from 1 to 100. I will try to guess ");
+    printf("it.\nRespond with a y if my guess is right, with a h if it's");
+    printf("\ntoo high and an l if it's too low.\n");
+    printf("Uh...is your number %d?\n", guess);
+
+    while ((ch = getchar()) != 'y')
+    {
+        while (getchar() != '\n') // clear input stream
+            ;
+        if (ch == 'h')
+            upper_bound = guess;
+        else if (ch == 'l')
+            lower_bound = guess;
+        else
+        {
+            printf("Invalid valid input. Try again.\n");
+            continue;
+        }
+        guess = (upper_bound + lower_bound) / 2.0;
+        printf("Well, then, is it %d?\n", guess);
+    }
+
+    printf("I knew I could do it!\n");
+    return 0;
+}
+```
+
+**Python**
+```Python
+upper_bound = 100
+lower_bound = 0
+guess = 50
+
+print(f"""Pick an integer from 1 to 100. I will try to guess it. 
+Respond with a y if my guess is right, with a h if it's
+too high and an l if it's too low.
+Uh...is your number {guess}?""")
+
+ch = input()
+
+while ch[0] != 'y':
+    if ch == 'h':
+        upper_bound = guess
+    elif ch == 'l':
+        lower_bound = guess
+    else:
+        print("Invalid valid input. Try again.")
+        ch = input()
+        continue
+    guess = (upper_bound + lower_bound) / 2
+    print("Well, then, is it %d?" % guess)
+    ch = input()
+
+print("I knew I could do it!")
+```
+
+#### Question 6
+Modify the get_first() function of Listing 8.8 so that it returns the first non-  
+whitespace character encountered. Test it in a simple program.
+
+**C**
+```C
+#include <stdio.h>
+#include <ctype.h>
+
+int get_first(void);
+
+int main(void)
+{
+    int ch;
+
+    printf("Test program for get_first():\n");
+    printf("Enter a line; you should see the first non-whitespace\n");
+    printf("character echoed in the terminal:\n");
+
+    ch = get_first();
+    printf("%c\n", ch);
+
+    return 0;
+}
+
+int get_first(void)
+{
+    // returns first non-whitespace character and clears
+    // remaining input until next line break or EOF
+
+    int ch, garbage;
+
+    do {
+        ch = getchar();
+    }
+    while (isspace(ch));
+        
+
+    while((garbage = getchar()) != '\n' && garbage != EOF)
+        ;
+
+    return ch;
+}
+```
+
+**Python**
+```Python
+def get_first():
+    for line in sys.stdin:
+        for ch in line:
+            if ch != ' ':
+                return ch
+print("""Test program for get_first():
+Enter a line; you should see the first non-whitespace
+character echoed in the terminal:""")
+print(get_first())
+```
+
+#### Question 7
+Modify Programming Exercise 8 from Chapter 7 so that the menu choices are labeled by  
+characters instead of by numbers; use q instead of 5 as the cueto terminate input.
+
+**C**
+```C
+#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+
+#define RATE_1 8.75
+#define RATE_2 9.33
+#define RATE_3 10.00
+#define RATE_4 11.20
+
+#define OVERTIME_HOURS 40.0
+#define OVERTIME_MULTIPLIER 1.5
+#define TAX_RATE_1 0.15
+#define TAX_BRACKET_1 300.0
+#define TAX_RATE_2 0.20
+#define TAX_BRACKET_2 450.0
+#define TAX_RATE_3 0.25
+
+void flush_input_buffer(void);
+float calculate_gross_pay(float hours, float rate);
+float calulate_taxes(float gross_pay);
+int get_first(void);
+
+int main(void)
+{
+    bool exit_flag = false;
+    int rate_option;
+    float rate, hours, gross_pay, taxes;
+
+    while (1) // main program loop
+    {
+
+        // print usage instructions
+        printf("********************************************************************\n");
+        printf("Enter the character corresponding to the desired pay rate or action:\n");
+        printf("a) $%.2f/hr 				b) $%.2f/hr\n", RATE_1, RATE_2);
+        printf("c) $%.2f/hr 				d) $%.2f/hr\n", RATE_3, RATE_4);
+        printf("q) quit \n");
+        printf("********************************************************************\n");
+
+        rate_option = get_first();
+        switch (rate_option)
+        {
+            case ('a') : 	
+                rate = RATE_1;
+                break;
+            case ('b') : 	
+                rate = RATE_2;
+                break;
+            case ('c') :
+                rate = RATE_3;
+                break;
+            case ('d') :
+                rate = RATE_4;
+                break;
+            case ('q') :
+                printf("Bye.\n");
+                return 0; // exit program
+            default : // invalid input
+                printf("Invalid input. Try again.\n\n");
+                continue; // repeat main program loop
+        }
+
+        printf("Enter number of hours worked in a week: ");
+        while (scanf("%f", &hours) != 1 || hours <= 0)
+        {
+            flush_input_buffer();
+            printf("Please enter a positive number. \n");
+            printf("Enter number of hours worked in a week: ");
+        }
+
+        gross_pay = calculate_gross_pay(hours, rate);
+        taxes = calulate_taxes(gross_pay);
+
+        printf("For %.1f hours of work at $%.2f/hr, you make $%.2f and pay"
+               " $%.2f in taxes.\n", hours, rate, gross_pay, taxes);
+        printf("\n");
+
+    }
+}
+
+void flush_input_buffer(void)
+{
+    while (getchar() != '\n')
+        ;
+}
+
+float calculate_gross_pay(float hours, float rate)
+{
+    if (hours > OVERTIME_HOURS)
+        return OVERTIME_HOURS * rate + (hours - OVERTIME_HOURS) * rate * OVERTIME_MULTIPLIER;
+    else
+        return hours * rate;
+}
+
+float calulate_taxes(float gross_pay)
+{
+    if (gross_pay > TAX_BRACKET_2)
+        return TAX_RATE_3 * (gross_pay - TAX_BRACKET_2) + TAX_RATE_2 * (TAX_BRACKET_2 - TAX_BRACKET_1) + TAX_RATE_1 * TAX_BRACKET_1;
+    else if (gross_pay > TAX_BRACKET_1)
+        return TAX_RATE_2 * (gross_pay - TAX_BRACKET_1) + TAX_RATE_1 * TAX_BRACKET_1;
+    else
+        return TAX_RATE_1 * gross_pay;
+}
+
+int get_first(void)
+{
+    // returns first non-whitespace character and clears
+    // remaining input until next line break or EOF
+
+    int ch, garbage;
+
+    do {
+        ch = getchar();
+    }
+    while (isspace(ch));
+        
+
+    while((garbage = getchar()) != '\n' && garbage != EOF)
+        ;
+
+    return ch;
+}
+```
+
+**Python**
+```Python
+RATE_1 = 8.75
+RATE_2 = 9.33
+RATE_3 = 10.00
+RATE_4 = 11.20
+
+over_time = 1.5
+
+def Clannad(basic_salary):
+    working_hour = float(input("Enter your working hours (per week): "))
+    total_income = 0
+
+    if working_hour <= 40:
+        total_income = basic_salary * working_hour
+    else:
+        total_income = basic_salary * 40 + basic_salary * over_time * (working_hour - 40)
+
+    if total_income <= 300:
+        tax_rate = .15
+        tax = total_income * tax_rate
+
+    elif total_income > 300 and total_income <= 450:
+        tax_rate = .2
+        tax = 300 * .15 + (total_income - 300) * tax_rate
+
+    else:
+        tax_rate = .25
+        tax = 300 * .15 + 150 * .2 + (total_income - 450) * tax_rate
+
+    net_income = total_income - tax
+
+    print("Your total income: $%.2f" % total_income)
+    print("Your tax: $%.2f" % tax)
+    print("Your net income: $%.2f" % net_income)
+
+def menu():
+    print("*****************************************************************")
+    print("Enter the number corresponding to the desired pay rate or action:")
+    print("a) $%.2f/hr 				b) $%.2f/hr" % (RATE_1, RATE_2))
+    print("c) $%.2f/hr 				d) $%.2f/hr" % (RATE_3, RATE_4))
+    print("q) quit")
+    print("*****************************************************************")
+
+menu()
+choice = input()
+while choice != 'q':
+    if choice.isalpha():
+        if choice == 'a':
+            Clannad(RATE_1)
+        elif choice == 'b':
+            Clannad(RATE_2)
+        elif choice == 'c':
+            Clannad(RATE_3)
+        elif choice == 'd':
+            Clannad(RATE_4)
+        else:
+            print("Input the right option, please.")
+    else:
+        print("Input the right option, please.")
+    print()
+    menu()
+    choice = input()
+```
+
+#### Question 8
+Write a program that shows you a menu offering you the choice of addition,subtraction,  
+multiplication, or division. After getting your choice, theprogram asks for two numbers,  
+then performs the requested operation. Theprogram should accept only the offered  
+menu choices. It should use typefloat for the numbers and allow the user to try again  
+if he or she fails toenter a number. In the case of division, the program should prompt  
+the userto enter a new value if 0 is entered as the value for the second number. A typical  
+program run should look like this:
+```
+Enter the operation of your choice:
+a. add          s. subtract
+m. multiply     d. divide
+q. quit
+a
+Enter first number: 22.4
+Enter second number: one
+one is not an number.
+Please enter a number, such as 2.5, -1.78E8, or 3: 1
+22.4 + 1 = 23.4
+Enter the operation of your choice:
+a. add          s. subtract
+m. multiply     d. divide
+q. quit
+d
+Enter first number: 18.4
+Enter second number: 0
+Enter a number other than 0: 0.2
+18.4 / 0.2 = 92
+a. add          s. subtract
+m. multiply     d. divide
+q. quit
+q
+Bye.
+```
+
+**C**
+```C
+#include <stdio.h>
+#include <ctype.h>
+
+int get_first(void);
+void print_menu(void);
+float get_number(void);
+
+int main(void)
+{
+    int operation;
+    float num1, num2;
+
+    print_menu();
+    while ((operation = get_first()) != 'q')
+    {
+        printf("Enter first number: ");
+        num1 = get_number();
+        printf("Enter second number: ");
+        num2 = get_number();
+
+        switch (operation)
+        {
+            case ('a') :
+                printf("%.3f + %.3f = %.3f\n", num1, num2, num1 + num2);
+                break;
+            case ('s') :
+                printf("%.3f - %.3f = %.3f\n", num1, num2, num1 - num2);
+                break;
+            case ('m') :
+                printf("%.3f * %.3f = %.3f\n", num1, num2, num1 * num2);
+                break;
+            case ('d') :
+                while (num2 == 0)
+                {
+                    printf("Enter a number other than 0: ");
+                    num2 = get_number();
+                }
+                printf("%.3f / %.3f = %.3f\n", num1, num2, num1 / num2);
+                break;
+            default :
+                printf("I do not recognize that input. Try again.");
+        }
+        print_menu();
+    }
+
+
+}
+
+int get_first(void)
+{
+    // return first non-whitespace character
+    int ch;
+
+    do ch = getchar(); while (isspace(ch));
+
+    while (getchar() != '\n')
+        ;
+
+    return ch;
+}
+
+
+void print_menu(void)
+{
+    printf("Enter the operation of your choice:\n");
+    printf("a. add            s. subtract\n");
+    printf("m. multiply       d. divide\n");
+    printf("q. quit\n");
+}
+
+float get_number(void)
+{
+    int ch;
+    float num;
+
+    while (scanf("%f", &num) != 1)
+    {
+        while ((ch = getchar()) != '\n') // echo user input and clear stream
+            putchar(ch);
+
+        printf(" is not a number.\n");
+        printf("Please enter a number, such as 2.5, -1.78E8, or 3: ");
+    }
+
+    return num;
+}
+```
+
+**Python**
+```Python
+operation = True
+
+def choice():
+    print("Enter the operation of your choice:")
+    print("a. add       s. subtract")
+    print("m. multiply  d. divide")
+    print('q. quit')
+    text = input()
+    return text
+
+def two_number():
+    first = input("Enter first number:")
+    second = input("Enter second number:")
+    while first.lstrip('-').replace('.','',1).replace('E-','',1).replace('E','',1).replace('e-','',1).replace('e','',1).isdigit() is False:
+        print(f"{first} is not an number.")
+        print("Please enter a number, such as 2.5, -1.78E8, or 3:")
+        first = input()
+    while second.lstrip('-').replace('.','',1).replace('E-','',1).replace('E','',1).replace('e-','',1).replace('e','',1).isdigit() is False:
+        print(f"{second} is not an number.")
+        print("Please enter a number, such as 2.5, -1.78E8, or 3:")
+        second = input()
+    return first, second
+
+while operation == True:
+    ans = choice()
+    if ans == 'q':
+        print('Bye.')
+        operation = False
+    elif ans == 'a':
+        first, second = two_number()
+        print("%s + %s = %.1f" % (first, second, float(first)+float(second)))
+    elif ans == 's':
+        first, second = two_number()
+        print("%s - %s = %.1f" % (first, second, float(first)-float(second)))
+    elif ans == 'm':
+        first, second = two_number()
+        print("%s * %s = %.1f" % (first, second, float(first)*float(second)))
+    elif ans == 'd':
+        first, second = two_number()
+        while second == '0':
+            second = input("Enter a number other than 0:")
+        print("%s / %s = %.1f" % (first, second, float(first)/float(second)))
+    else:
+        print('invalid choice, try again.')
+```
+
