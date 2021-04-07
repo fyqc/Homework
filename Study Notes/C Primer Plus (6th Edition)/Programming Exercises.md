@@ -5169,6 +5169,13 @@ Fibonacci numbers.
 
 **C**
 ```C
+/*
+C often represents integers with a sequence of 32 bits, 
+and the range of values they can take on are from -2,147,483,648 to 2,147,483,647.
+Notice what the 47th Fibonacci number is? 2,971,215,073
+After they overflow, they wrap around to the smallest integer possible; 
+*/
+
 #include <stdio.h>
 
 int Fibonacci(int n);
