@@ -99,13 +99,17 @@
   * [Chapter 9 Functions](#chapter-9-functions)
       - [Page 380](#page-380)
       - [Question 1](#question-1-8)
-- [§ 9.2](#--92)
-  * [Chapter 10 Arrays and Pointers](#chapter-10-arrays-and-pointers)
-      - [Page 439](#page-439)
-      - [Question 1](#question-1-9)
-  * [Chapter 11 Character Strings and String Functions](#chapter-11-character-strings-and-string-functions)
-      - [Page 508](#page-508)
-      - [Question 1](#question-1-10)
+      - [Question 2](#question-2-7)
+      - [Question 3](#question-3-7)
+      - [Question 4](#question-4-7)
+      - [Question 5](#question-5-7)
+      - [Page 381](#page-381)
+      - [Question 6](#question-6-7)
+      - [Question 7](#question-7-7)
+      - [Question 8](#question-8-7)
+      - [Question 9](#question-9-3)
+      - [Question 10](#question-10-2)
+      - [Question 11](#question-11-2)
 
 
 # C Primer Plus (6th Edition) Study Notes
@@ -169,14 +173,14 @@ Gustav Mahler     <- Third and fourth print statements
 **C**
 ```C
 #include <stdio.h>
-    
+
 int main()
 {
-    printf("Tomoyo Sakagami\n");    /*Clannad A masterpiece*/
+    printf("Tomoyo Sakagami\n"); /*Clannad A masterpiece*/
     printf("Tomoyo\nSakagami\n");
     printf("Tomoyo");
     printf(" Sakagami");
-    
+
     return 0;
 }
 ```
@@ -254,21 +258,20 @@ void jolly(void);
 void deny(void);
 
 int main(void)
-{  
+{
     jolly();
     jolly();
     jolly();
     deny();
-    
+
     return 0;
 }
 
-     
 void jolly(void)
 {
     printf("For he is a jolly good fellow!\n");
 }
-    
+
 void deny(void)
 {
     printf("Which nobody can deny!\n");
@@ -307,7 +310,7 @@ void br(void);
 void ic(void);
 
 int main(void)
-{  
+{
     br();
     printf(", ");
     ic();
@@ -315,7 +318,7 @@ int main(void)
     ic();
     printf(",\n");
     br();
-    
+
     return 0;
 }
 
@@ -323,7 +326,7 @@ void br(void)
 {
     printf("Brazil, Russia");
 }
- 
+
 void ic(void)
 {
     printf("India, China");
@@ -369,7 +372,6 @@ int main(void)
     
     return 0;
 }
-
 ```
 
 **Python**
@@ -393,7 +395,7 @@ program use the function as often as needed.
 **C**
 ```C
 #include <stdio.h>
-void smile(void);	/* ANSI/ISO C function prototyping */
+void smile(void); /* ANSI/ISO C function prototyping */
 int main(void)
 {
     smile();
@@ -404,11 +406,11 @@ int main(void)
     smile();
     printf("\n");
     smile();
-    
+
     return 0;
 }
- 
-void smile(void)	/* start of function definition */
+
+void smile(void) /* start of function definition */
 {
     printf("Smile!");
 }
@@ -448,7 +450,7 @@ done!
 **C**
 ```C
 #include <stdio.h>
-void one_three(void);	/* ANSI/ISO C function prototyping */
+void one_three(void); /* ANSI/ISO C function prototyping */
 void two(void);
 int main()
 {
@@ -459,13 +461,13 @@ int main()
     return 0;
 }
 
-void one_three(void)	/* start of function definition */
+void one_three(void) /* start of function definition */
 {
     printf("one\n");
     two();
     printf("three\n");
 }
-    
+
 void two(void)
 {
     printf("two\n");
@@ -616,7 +618,7 @@ p notation: 0x1.01p+6
 **C**
 ```C
 #include <stdio.h>
-int main(void) 
+int main(void)
 {
     float flt_input;
 
@@ -682,7 +684,7 @@ int main(void)
     printf("Enter an amount of water (in quarts): ");
     scanf("%f", &quarts);
     printf("There are %f molecules in %f quarts of water.\n",
-    quarts * GRAMS_H20_PER_QUART / H20_MASS, quarts);
+           quarts * GRAMS_H20_PER_QUART / H20_MASS, quarts);
 
     return 0;
 }
@@ -753,7 +755,7 @@ int main(void)
     float PINTS_PER_CUP = .5;
     float OUNCES_PER_CUP = 8;
     float TBS_PER_CUP = 2 * OUNCES_PER_CUP; // tablespoons/ounce * ounces/cup
-    float TSP_PER_CUP = 3 * TBS_PER_CUP; // teaspoons/tablespoon * tablespoons/ounce * ounces/cup
+    float TSP_PER_CUP = 3 * TBS_PER_CUP;    // teaspoons/tablespoon * tablespoons/ounce * ounces/cup
     float cups;
 
     printf("Enter an amount in cups:");
@@ -841,9 +843,9 @@ int main(void)
     printf("Enter your first name: ");
     scanf("%s", name);
     name_length = strlen(name);
-    printf("\"%s\"\n", name); // a. enclosed in double quotes
-    printf("\"%20s\"\n", name); // b. double quotes, 20 char wide, right-justified
-    printf("\"%-20s\"\n", name); // c. double quotes, 20 char wide, left-justified
+    printf("\"%s\"\n", name);                   // a. enclosed in double quotes
+    printf("\"%20s\"\n", name);                 // b. double quotes, 20 char wide, right-justified
+    printf("\"%-20s\"\n", name);                // c. double quotes, 20 char wide, left-justified
     printf("\"%*s\"\n", name_length + 3, name); // d. double quotes, 3 char wider than name
 
     return 0;
@@ -952,7 +954,8 @@ int main(void)
     printf("Enter the file size (in megabytes): ");
     scanf("%f", &file_size_MB);
     printf("At %.2f megabits per second, a file of %.2f megabytes"
-           " downloads in %.2f seconds.\n", download_speed_Mps, file_size_MB,
+           " downloads in %.2f seconds.\n",
+           download_speed_Mps, file_size_MB,
            file_size_MB * BITS_PER_BYTE / download_speed_Mps);
 
     return 0;
@@ -1000,13 +1003,13 @@ int main(void)
     printf("\n");
     printf("%s %s\n", first_name, last_name);
     printf("%*lu %*lu\n", // right justified
-           (int) strlen(first_name), strlen(first_name),
-           (int) strlen(last_name), strlen(last_name));
+           (int)strlen(first_name), strlen(first_name),
+           (int)strlen(last_name), strlen(last_name));
     printf("\n");
     printf("%s %s\n", first_name, last_name);
     printf("%-*lu %-*lu\n", // left justified
-           (int) strlen(first_name), strlen(first_name),
-           (int) strlen(last_name), strlen(last_name));
+           (int)strlen(first_name), strlen(first_name),
+           (int)strlen(last_name), strlen(last_name));
     printf("\n");
 
     return 0;
@@ -1152,7 +1155,7 @@ int main(void)
         scanf("%d", &minutes);
         printf("%d minute(s) is %d hour(s) and %d minute(s).\n",
                minutes,
-               minutes / MINUTES_PER_HOUR, // hours
+               minutes / MINUTES_PER_HOUR,  // hours
                minutes % MINUTES_PER_HOUR); // minutes
     }
 
@@ -1229,8 +1232,8 @@ int main(void)
     scanf("%d", &days);
     while (days > 0)
     {
-        printf("%d days are %d weeks, %d days.\n", 
-        days, days / DAYS_PER_WEEK, days % DAYS_PER_WEEK);
+        printf("%d days are %d weeks, %d days.\n",
+               days, days / DAYS_PER_WEEK, days % DAYS_PER_WEEK);
 
         printf("Enter a number of days (or enter 0 to quit): ");
         scanf("%d", &days);
@@ -1280,8 +1283,8 @@ int main(void)
 
     while (height_cm > 0)
     {
-        height_in = height_cm / CM_PER_IN; // convert height to inches
-        feet = (int) height_in / IN_PER_FT; // get number of feet in height
+        height_in = height_cm / CM_PER_IN;     // convert height to inches
+        feet = (int)height_in / IN_PER_FT;     // get number of feet in height
         inches = height_in - feet * IN_PER_FT; // get remaining inches
 
         printf("%.1f cm = %d feet, %.1f inches\n",
@@ -1538,7 +1541,7 @@ void Temperatures(double Fahrenheit)
     double Kelvin = Celsius + CEL_TO_KEL_OFFSET;
 
     printf("%.2f degrees fahrenheit is %.2f degrees celsius or %.2f degrees kelvin.\n",
-            Fahrenheit, Celsius, Kelvin);
+           Fahrenheit, Celsius, Kelvin);
 }
 ```
 
@@ -1713,7 +1716,7 @@ int main(void)
 
     for (int i = 1; i < 7; i++)
     {
-        for(int j = 1; j <= i; j++)
+        for (int j = 1; j <= i; j++)
         {
             printf("%c", c++); // print and THEN increment c
         }
@@ -1775,7 +1778,7 @@ int main(void)
         scanf(" %c", &uppercase_letter);
     } while (uppercase_letter < 'A' || 'Z' < uppercase_letter);
 
-    for(c1 = 'A'; c1 <= uppercase_letter; c1++)
+    for (c1 = 'A'; c1 <= uppercase_letter; c1++)
     {
         // print opening spaces
         print_spaces(uppercase_letter - c1);
@@ -1856,18 +1859,19 @@ cube. Ask the user to input the lower and upper limits for the table. Use a for 
 
 int main(void)
 {
-    long upper = -1, lower=0;
+    long upper = -1, lower = 0;
     int reads;
 
     printf("This program prints a table of integers with their "
            "squares and cubes.\n");
     do
-    {	
+    {
         printf("Enter lower and upper integer limits (in that order): ");
         reads = scanf("%ld%ld", &lower, &upper);
         if (reads != 2)
         {
-            while (getchar() != '\n') ; // if read fails, clear input buffer
+            while (getchar() != '\n')
+                ; // if read fails, clear input buffer
         }
     } while (lower > upper); // if lower is greater than upper, get new input
 
@@ -1877,7 +1881,7 @@ int main(void)
     printf("---------------|---------------|---------------\n");
     for (long int i = lower; i <= upper; i++)
     {
-        printf(" %-14ld| %-14ld| %-14ld\n", i, i * i, i * i * i);		
+        printf(" %-14ld| %-14ld| %-14ld\n", i, i * i, i * i * i);
     }
     printf("\n");
 
@@ -1956,12 +1960,12 @@ int main(void)
 {
     float num1, num2;
     int reads;
-    
+
     printf("Enter two floating-point numbers: ");
     while (scanf(" %f %f", &num1, &num2) == 2)
     {
         printf("(%.3f - %.3f)/(%.3f * %.3f) = %.3f\n", num1, num2, num1, num2,
-               (num1 - num2)/(num1 * num2));
+               (num1 - num2) / (num1 * num2));
         printf("Enter two floating-point numbers (enter non-numeric to quit): ");
     }
 
@@ -1972,20 +1976,21 @@ int main(void)
 **Python**
 ```Python
 try:
-    num1, num2 = [float(x) for x in input("Enter two floating-point numbers: ").split()]
+    num1, num2 = [float(x) for x in input(
+        "Enter two floating-point numbers: ").split()]
     while True:
         try:
             if num2 != 0:
                 print("(%.3f - %.3f)/(%.3f * %.3f) = %.3f"
-                 % (num1, num2, num1, num2, (num1 - num2)/(num1 * num2)))
+                      % (num1, num2, num1, num2, (num1 - num2)/(num1 * num2)))
             else:
                 print("Mathematical division by zero shall not allowed.")
-            num1, num2 = [float(x) for x in input("Enter two floating-point numbers: ").split()]
+            num1, num2 = [float(x) for x in input(
+                "Enter two floating-point numbers: ").split()]
         except:
             break
 except:
     pass
-
 ```
 
 #### Question 9
@@ -2031,15 +2036,17 @@ def calculate(n1, n2):
     return (n1 - n2) / (n1 * n2)
 
 try:
-    num1, num2 = [float(x) for x in input("Enter two floating-point numbers: ").split()]
+    num1, num2 = [float(x) for x in input(
+        "Enter two floating-point numbers: ").split()]
     while True:
         try:
             if num2 != 0:
                 print("(%.3f - %.3f)/(%.3f * %.3f) = %.3f"
-                 % (num1, num2, num1, num2, calculate(num1, num2)))
+                      % (num1, num2, num1, num2, calculate(num1, num2)))
             else:
                 print("Mathematical division by zero shall not allowed.")
-            num1, num2 = [float(x) for x in input("Enter two floating-point numbers: ").split()]
+            num1, num2 = [float(x) for x in input(
+                "Enter two floating-point numbers: ").split()]
         except:
             break
 except:
@@ -2071,7 +2078,7 @@ int main(void)
     int upper, lower, reads;
 
     printf("Enter lower and upper integer limits: ");
-    while(reads = scanf("%d%d", &lower, &upper), reads == 2 && lower < upper)
+    while (reads = scanf("%d%d", &lower, &upper), reads == 2 && lower < upper)
     {
         printf("The sums of the squares from %d to %d is %d\n",
                lower * lower, upper * upper, sum_of_squares(lower, upper));
@@ -2099,7 +2106,6 @@ int sum_of_squares(int lower, int upper) // calculate sum of squares from lower 
 ```Python
 lower, upper = [int(x) for x in input("Enter two value: ").split()]
 
-
 def sum_of_squares(lower, upper):
     p_sum = 0
     for i in range(lower, upper+1):
@@ -2108,8 +2114,8 @@ def sum_of_squares(lower, upper):
 
 
 while lower != upper:
-    print("The sums of the squares from %d to %d is %d" % 
-        (lower * lower, upper * upper, sum_of_squares(lower, upper)))
+    print("The sums of the squares from %d to %d is %d" %
+          (lower * lower, upper * upper, sum_of_squares(lower, upper)))
     lower, upper = [int(x) for x in input("Enter two value: ").split()]
 ```
 
@@ -2179,8 +2185,8 @@ int main(void)
 
     for (long int i = 1; i <= limit; i++)
     {
-        series1 += 1.0f/i;
-        series2 += (1.0f/i) * sign;
+        series1 += 1.0f / i;
+        series2 += (1.0f / i) * sign;
         sign = -sign; // toggle sign
     }
 
@@ -2233,7 +2239,8 @@ int main(void)
     }
     printf("Powers of 2:\n");
     i = 0;
-    do {
+    do
+    {
         printf("%d ", powers_of_2[i]);
         i++;
     } while (i < 8);
@@ -2247,7 +2254,7 @@ int main(void)
 ```Python
 print("Powers of 2:")
 x = []
-for i in range(1,9):
+for i in range(1, 9):
     n = 2**i
     x.append(n)
 
@@ -2375,7 +2382,7 @@ int main(void)
     const float DAPHNE_INTEREST = 0.10f;
 
     // initialize years and balances
-    int years = 0; 
+    int years = 0;
     float daphne_balance = DAPHNE_PRINCIPLE;
     float deirdre_balance = DEIRDE_PRINCIPLE;
 
@@ -2384,11 +2391,12 @@ int main(void)
         // eq. for compound interest
         deirdre_balance *= 1.0f + DEIRDE_INTEREST;
         // eq. for simple interest
-        daphne_balance += DAPHNE_PRINCIPLE * DAPHNE_INTEREST; 
+        daphne_balance += DAPHNE_PRINCIPLE * DAPHNE_INTEREST;
         years++;
     }
     printf("After %d years, Daphne's investment is worth $%.2f and "
-           "Deirdre’s investment is worth $%.2f.\n", years,
+           "Deirdre’s investment is worth $%.2f.\n",
+           years,
            daphne_balance, deirdre_balance);
 
     return 0;
@@ -2413,8 +2421,8 @@ while deirdre_balance <= daphne_balance:
     years += 1
 
 print("After %d years, Daphne's investment is worth $%.2f and "
-        "Deirdre’s investment is worth $%.2f." %
-        (years, daphne_balance, deirdre_balance))
+      "Deirdre’s investment is worth $%.2f." %
+      (years, daphne_balance, deirdre_balance))
 ```
 
 #### Page 244
@@ -2447,7 +2455,8 @@ int main(void)
     }
 
     printf("After %d years, Chuckie is in the red with a balance of"
-           " %.2f USD.\n", years, balance);
+           " %.2f USD.\n",
+           years, balance);
 
     return 0;
 }
@@ -2468,7 +2477,7 @@ while balance > 0:
     years += 1
 
 print("After %d years, Chuckie is in the red with a balance of"
-           " %.2f USD." % (years, balance))
+      " %.2f USD." % (years, balance))
 ```
 
 #### Page 241
@@ -2538,9 +2547,9 @@ other characters read.
 int main(void)
 {
     char ch;
-    unsigned int spaces = 0, newlines = 0, other= 0;
+    unsigned int spaces = 0, newlines = 0, other = 0;
     printf("Enter input (%c to stop):\n", STOP);
-    while((ch = getchar()) != STOP)
+    while ((ch = getchar()) != STOP)
     {
         if (ch == ' ')
             spaces++;
@@ -2554,7 +2563,8 @@ int main(void)
     printf("\n");
     printf("Spaces: %u\n"
            "Newlines: %u\n"
-           "Other: %u\n", spaces, newlines, other);
+           "Other: %u\n",
+           spaces, newlines, other);
 
     return 0;
 }
@@ -2577,8 +2587,8 @@ other = len(text) - spaces - newlines
 print("Character Count:")
 print()
 print("Spaces: %u\n"
-    "Newlines: %u\n"
-    "Other: %u" % (spaces, newlines, other))
+      "Newlines: %u\n"
+      "Other: %u" % (spaces, newlines, other))
 ```
 
 #### Question 2
@@ -2607,20 +2617,20 @@ int main(void)
     {
         switch (ch)
         {
-            case SPACE :
-                    printf("' ': %3d ", ch);
-                    break;
-            case TAB :
-                    printf("'\\t': %3d ", ch);
-                    break;
-            case NEWLINE :
-                    printf("'\\n': %3d ", ch);
-                    break;
-            case BACKSPACE :
-                    printf("'\\b': %3d ", ch);
-                    break;
-            default:
-                    printf(" %c : %3d ", ch, ch);
+        case SPACE:
+            printf("' ': %3d ", ch);
+            break;
+        case TAB:
+            printf("'\\t': %3d ", ch);
+            break;
+        case NEWLINE:
+            printf("'\\n': %3d ", ch);
+            break;
+        case BACKSPACE:
+            printf("'\\b': %3d ", ch);
+            break;
+        default:
+            printf(" %c : %3d ", ch, ch);
         }
         count++;
         if (count % 8 == 0)
@@ -2666,7 +2676,7 @@ int main(void)
     int input;
 
     printf("Enter integers (0 to stop):\n");
-    while(scanf("%d", &input) == 1 && input != STOP)
+    while (scanf("%d", &input) == 1 && input != STOP)
     {
         if (input % 2 == 0)
         {
@@ -2680,8 +2690,8 @@ int main(void)
         }
     }
 
-    even_avg = even_sum / (float) even_count;
-    odd_avg = odd_sum / (float) odd_count;
+    even_avg = even_sum / (float)even_count;
+    odd_avg = odd_sum / (float)odd_count;
 
     printf("Number of even integers: %d\n", even_count);
     printf("Average value of even integers: %.2f\n", even_avg);
@@ -2739,12 +2749,12 @@ int main(void)
         if (ch == '.')
         {
             printf("!");
-            substitutions ++;
+            substitutions++;
         }
         else if (ch == '!')
         {
             printf("!!");
-            substitutions ++ ;
+            substitutions++;
         }
         else
             printf("%c", ch);
@@ -2785,25 +2795,25 @@ int main(void)
     {
         switch (ch)
         {
-            case '.' :
-            {
-                printf("!");
-                substitutions ++;
-            }
-                break;
-            case '!' :
-            {
-                printf("!!");
-                substitutions ++ ;
-            }
-                break;
-            default :
-                printf("%c", ch);
+        case '.':
+        {
+            printf("!");
+            substitutions++;
+        }
+        break;
+        case '!':
+        {
+            printf("!!");
+            substitutions++;
+        }
+        break;
+        default:
+            printf("%c", ch);
         }
     }
 
     printf("\nThe number of substitutionsit has made: %d", substitutions);
-    
+
     return 0;
 }
 ```
@@ -2863,7 +2873,6 @@ int main(void)
         }
         else
             e_flag = false;
-
     }
 
     printf("The sequence 'ei' occurs %u times.\n", ei_count);
@@ -3044,25 +3053,25 @@ int main(void)
         scanf("%d", &rate_option);
         switch (rate_option)
         {
-            case (1) : 	
-                rate = RATE_1;
-                break;
-            case (2) : 	
-                rate = RATE_2;
-                break;
-            case (3) :
-                rate = RATE_3;
-                break;
-            case (4) :
-                rate = RATE_4;
-                break;
-            case (5) :
-                exit_flag = true;
-                break;
-            default : // invalid input
-                flush_input_buffer();
-                printf("Please enter an integer between 1 and 5.\n\n");
-                continue; // repeat main program loop
+        case (1):
+            rate = RATE_1;
+            break;
+        case (2):
+            rate = RATE_2;
+            break;
+        case (3):
+            rate = RATE_3;
+            break;
+        case (4):
+            rate = RATE_4;
+            break;
+        case (5):
+            exit_flag = true;
+            break;
+        default: // invalid input
+            flush_input_buffer();
+            printf("Please enter an integer between 1 and 5.\n\n");
+            continue; // repeat main program loop
         }
 
         if (exit_flag)
@@ -3080,9 +3089,9 @@ int main(void)
         taxes = calulate_taxes(gross_pay);
 
         printf("For %.1f hours of work at $%.2f/hr, you make $%.2f and pay"
-               " $%.2f in taxes.\n", hours, rate, gross_pay, taxes);
+               " $%.2f in taxes.\n",
+               hours, rate, gross_pay, taxes);
         printf("\n");
-
     }
 
     printf("Bye.\n");
@@ -3124,6 +3133,7 @@ RATE_4 = 11.20
 
 over_time = 1.5
 
+
 def Clannad(basic_salary):
     working_hour = float(input("Enter your working hours (per week): "))
     total_income = 0
@@ -3131,7 +3141,8 @@ def Clannad(basic_salary):
     if working_hour <= 40:
         total_income = basic_salary * working_hour
     else:
-        total_income = basic_salary * 40 + basic_salary * over_time * (working_hour - 40)
+        total_income = basic_salary * 40 + \
+            basic_salary * over_time * (working_hour - 40)
 
     if total_income <= 300:
         tax_rate = .15
@@ -3151,6 +3162,7 @@ def Clannad(basic_salary):
     print("Your tax: $%.2f" % tax)
     print("Your net income: $%.2f" % net_income)
 
+
 def menu():
     print("*****************************************************************")
     print("Enter the number corresponding to the desired pay rate or action:")
@@ -3158,6 +3170,7 @@ def menu():
     print("3) $%.2f/hr 				4) $%.2f/hr" % (RATE_3, RATE_4))
     print("5) quit")
     print("*****************************************************************")
+
 
 menu()
 choice = input()
@@ -3212,7 +3225,7 @@ int main(void)
             if (i % j == 0) // if i is divisible by j ...
             {
                 prime_flag = false; // then i is not prime
-                break; // break out of inner loop
+                break;              // break out of inner loop
             }
         }
         if (prime_flag)
@@ -3232,21 +3245,28 @@ void flush_input_buffer(void)
 **Python**
 ```Python
 def is_prime(n):
-  if n == 2 or n == 3: return True
-  if n < 2 or n%2 == 0: return False
-  if n < 9: return True
-  if n%3 == 0: return False
-  r = int(n**0.5)
-  # since all primes > 3 are of the form 6n ± 1
-  # start with f=5 (which is prime)
-  # and test f, f+2 for being prime
-  # then loop by 6. 
-  f = 5
-  while f <= r:
-    if n % f == 0: return False
-    if n % (f+2) == 0: return False
-    f += 6
-  return True  
+    if n == 2 or n == 3:
+        return True
+    if n < 2 or n % 2 == 0:
+        return False
+    if n < 9:
+        return True
+    if n % 3 == 0:
+        return False
+    r = int(n**0.5)
+    # since all primes > 3 are of the form 6n ± 1
+    # start with f=5 (which is prime)
+    # and test f, f+2 for being prime
+    # then loop by 6.
+    f = 5
+    while f <= r:
+        if n % f == 0:
+            return False
+        if n % (f+2) == 0:
+            return False
+        f += 6
+    return True
+
 
 number = input("Please enter a positive integer: ")
 
@@ -3432,56 +3452,56 @@ int main(void)
     char option;
 
     printf("ABC Mail Order Grocery\n");
-    while(1)
+    while (1)
     {
         printf("What would you like to order?\n");
         printf("a) artichokes  b) beets  c) carrots  q) quit\n");
         option = getchar();
         switch (option)
         {
-            case ('q') : 
-                    printf("Bye.\n");
-                    return 0; // exit program
+        case ('q'):
+            printf("Bye.\n");
+            return 0; // exit program
 
-            case ('a') : // artichokes
-                    printf("How many pounds of artichokes would you like to add? ");
-                    if (scanf("%f", &weight) == 1)
-                        artichoke_weight += weight;
-                    else
-                    {
-                        flush_input_buffer();
-                        printf("Invalid input. Try again.\n");
-                        continue; // repeat main program loop
-                    }
-                    break;
+        case ('a'): // artichokes
+            printf("How many pounds of artichokes would you like to add? ");
+            if (scanf("%f", &weight) == 1)
+                artichoke_weight += weight;
+            else
+            {
+                flush_input_buffer();
+                printf("Invalid input. Try again.\n");
+                continue; // repeat main program loop
+            }
+            break;
 
-            case ('b') : // beets
-                    printf("How many pounds of beets would you like to add? ");
-                    if (scanf("%f", &weight) == 1)
-                        beet_weight += weight;
-                    else
-                    {
-                        flush_input_buffer();
-                        printf("Invalid input. Try again.\n");
-                        continue; // repeat main program loop
-                    }
-                    break;
+        case ('b'): // beets
+            printf("How many pounds of beets would you like to add? ");
+            if (scanf("%f", &weight) == 1)
+                beet_weight += weight;
+            else
+            {
+                flush_input_buffer();
+                printf("Invalid input. Try again.\n");
+                continue; // repeat main program loop
+            }
+            break;
 
-            case ('c') : // carrots
-                    printf("How many pounds of carrots would you like to add? ");
-                    if (scanf("%f", &weight) == 1)
-                        carrot_weight += weight;
-                    else
-                    {
-                        flush_input_buffer();
-                        printf("Invalid input. Try again.\n");
-                        continue; // repeat main program loop
-                    }
-                    break;
+        case ('c'): // carrots
+            printf("How many pounds of carrots would you like to add? ");
+            if (scanf("%f", &weight) == 1)
+                carrot_weight += weight;
+            else
+            {
+                flush_input_buffer();
+                printf("Invalid input. Try again.\n");
+                continue; // repeat main program loop
+            }
+            break;
 
-            default :
-                    printf("Invalid input. Try again.\n");
-                    continue; // repeat main program loop
+        default:
+            printf("Invalid input. Try again.\n");
+            continue; // repeat main program loop
         }
 
         // calculate subtotal
@@ -3559,6 +3579,7 @@ artichoke = 0
 beet = 0
 carrot = 0
 
+
 def calculate_shipping(weight):
     if weight < 5.0:
         return SHIPPING_5LB
@@ -3566,6 +3587,7 @@ def calculate_shipping(weight):
         return SHIPPING_20LB
     else:
         return SHIPPING_20LB + SHIPPING_OVER_20LB_RATE * (weight - 20.0)
+
 
 def summary():
     # calculate subtotal
@@ -3584,17 +3606,17 @@ def summary():
         total = subtotal + shipping - discount
         discount_flag = True
     else:
-        total = subtotal + shipping 
+        total = subtotal + shipping
         discount_flag = False
 
     print()
     print("Your order summary:\n")
     print("Artichokes: %.2flbs @ $%.2f/lb: $%.2f" %
-                (artichoke, ARTICHOKE_PRICE_PER_LB, artichoke_price))
+          (artichoke, ARTICHOKE_PRICE_PER_LB, artichoke_price))
     print("Beets: %.2flbs @ $%.2f/lb: $%.2f" %
-                (beet, BEET_PRICE_PER_LB, beet_price))
+          (beet, BEET_PRICE_PER_LB, beet_price))
     print("Carrots: %.2flbs @ $%.2f/lb: $%.2f" %
-                (carrot, CARROT_PRICE_PER_LB, carrot_price))
+          (carrot, CARROT_PRICE_PER_LB, carrot_price))
     print()
     print("Subtotal: $%.2f" % subtotal)
     print()
@@ -3604,15 +3626,18 @@ def summary():
     print("Grand total: \t\t$%.2f" % total)
     print()
 
+
 def order():
     print("What would you like to order?")
     print("a) artichokes  b) beets  c) carrots  q) quit")
+
 
 order()
 option = input()
 while option != 'q':
     if option == 'a':
-        weight = int(input("How many pounds of artichokes would you like to add? "))
+        weight = int(
+            input("How many pounds of artichokes would you like to add? "))
         artichoke += weight
 
     elif option == 'b':
@@ -3620,7 +3645,8 @@ while option != 'q':
         beet += weight
 
     elif option == 'c':
-        weight = int(input("How many pounds of carrots would you like to add? "))
+        weight = int(
+            input("How many pounds of carrots would you like to add? "))
         carrot += weight
 
     else:
@@ -3704,7 +3730,7 @@ int main(void)
         else if (ch == '\t')
             printf("\'\\t\': %d", ch);
         else // ascii control characters
-            printf("\'^%c\': %d", ch + 64, ch );
+            printf("\'^%c\': %d", ch + 64, ch);
 
         char_count++;
         if (char_count % 10 == 0)
@@ -3735,7 +3761,8 @@ for line in sys.stdin:
         elif ord(ch) == 10:
             print(r"'\n': 10")
         else:
-            print("'%c': %d" % (ch, ord(ch)), end=' ' if counter % 10 != 0 else '\n')
+            print("'%c': %d" % (ch, ord(ch)),
+                  end=' ' if counter % 10 != 0 else '\n')
 ```
 
 #### Question 3
@@ -3823,18 +3850,18 @@ int main(void)
             letter_count++;
             // if not currently in a word, then switch state to in word
             // and increment the word count
-            if (!in_word) 
+            if (!in_word)
             {
                 in_word = true;
                 word_count++;
             }
         }
         // if ch is not a letter, set program state to out of word
-        else 
+        else
             in_word = false;
     }
     // divide letter count by word count to get average letters/word
-    printf("Average letters per word: %.2f\n", (float) letter_count / word_count);
+    printf("Average letters per word: %.2f\n", (float)letter_count / word_count);
 
     return 0;
 }
@@ -3966,13 +3993,12 @@ int get_first(void)
 
     int ch, garbage;
 
-    do {
+    do
+    {
         ch = getchar();
-    }
-    while (isspace(ch));
-        
+    } while (isspace(ch));
 
-    while((garbage = getchar()) != '\n' && garbage != EOF)
+    while ((garbage = getchar()) != '\n' && garbage != EOF)
         ;
 
     return ch;
@@ -3981,6 +4007,8 @@ int get_first(void)
 
 **Python**
 ```Python
+import sys
+
 def get_first():
     for line in sys.stdin:
         for ch in line:
@@ -4040,24 +4068,24 @@ int main(void)
         rate_option = get_first();
         switch (rate_option)
         {
-            case ('a') : 	
-                rate = RATE_1;
-                break;
-            case ('b') : 	
-                rate = RATE_2;
-                break;
-            case ('c') :
-                rate = RATE_3;
-                break;
-            case ('d') :
-                rate = RATE_4;
-                break;
-            case ('q') :
-                printf("Bye.\n");
-                return 0; // exit program
-            default : // invalid input
-                printf("Invalid input. Try again.\n\n");
-                continue; // repeat main program loop
+        case ('a'):
+            rate = RATE_1;
+            break;
+        case ('b'):
+            rate = RATE_2;
+            break;
+        case ('c'):
+            rate = RATE_3;
+            break;
+        case ('d'):
+            rate = RATE_4;
+            break;
+        case ('q'):
+            printf("Bye.\n");
+            return 0; // exit program
+        default:      // invalid input
+            printf("Invalid input. Try again.\n\n");
+            continue; // repeat main program loop
         }
 
         printf("Enter number of hours worked in a week: ");
@@ -4072,9 +4100,9 @@ int main(void)
         taxes = calulate_taxes(gross_pay);
 
         printf("For %.1f hours of work at $%.2f/hr, you make $%.2f and pay"
-               " $%.2f in taxes.\n", hours, rate, gross_pay, taxes);
+               " $%.2f in taxes.\n",
+               hours, rate, gross_pay, taxes);
         printf("\n");
-
     }
 }
 
@@ -4109,13 +4137,12 @@ int get_first(void)
 
     int ch, garbage;
 
-    do {
+    do
+    {
         ch = getchar();
-    }
-    while (isspace(ch));
-        
+    } while (isspace(ch));
 
-    while((garbage = getchar()) != '\n' && garbage != EOF)
+    while ((garbage = getchar()) != '\n' && garbage != EOF)
         ;
 
     return ch;
@@ -4246,30 +4273,28 @@ int main(void)
 
         switch (operation)
         {
-            case ('a') :
-                printf("%.3f + %.3f = %.3f\n", num1, num2, num1 + num2);
-                break;
-            case ('s') :
-                printf("%.3f - %.3f = %.3f\n", num1, num2, num1 - num2);
-                break;
-            case ('m') :
-                printf("%.3f * %.3f = %.3f\n", num1, num2, num1 * num2);
-                break;
-            case ('d') :
-                while (num2 == 0)
-                {
-                    printf("Enter a number other than 0: ");
-                    num2 = get_number();
-                }
-                printf("%.3f / %.3f = %.3f\n", num1, num2, num1 / num2);
-                break;
-            default :
-                printf("I do not recognize that input. Try again.");
+        case ('a'):
+            printf("%.3f + %.3f = %.3f\n", num1, num2, num1 + num2);
+            break;
+        case ('s'):
+            printf("%.3f - %.3f = %.3f\n", num1, num2, num1 - num2);
+            break;
+        case ('m'):
+            printf("%.3f * %.3f = %.3f\n", num1, num2, num1 * num2);
+            break;
+        case ('d'):
+            while (num2 == 0)
+            {
+                printf("Enter a number other than 0: ");
+                num2 = get_number();
+            }
+            printf("%.3f / %.3f = %.3f\n", num1, num2, num1 / num2);
+            break;
+        default:
+            printf("I do not recognize that input. Try again.");
         }
         print_menu();
     }
-
-
 }
 
 int get_first(void)
@@ -4277,14 +4302,15 @@ int get_first(void)
     // return first non-whitespace character
     int ch;
 
-    do ch = getchar(); while (isspace(ch));
+    do
+        ch = getchar();
+    while (isspace(ch));
 
     while (getchar() != '\n')
         ;
 
     return ch;
 }
-
 
 void print_menu(void)
 {
@@ -4316,6 +4342,7 @@ float get_number(void)
 ```Python
 operation = True
 
+
 def choice():
     print("Enter the operation of your choice:")
     print("a. add       s. subtract")
@@ -4324,18 +4351,20 @@ def choice():
     text = input()
     return text
 
+
 def two_number():
     first = input("Enter first number:")
     second = input("Enter second number:")
-    while first.lstrip('-').replace('.','',1).replace('E-','',1).replace('E','',1).replace('e-','',1).replace('e','',1).isdigit() is False:
+    while first.lstrip('-').replace('.', '', 1).replace('E-', '', 1).replace('E', '', 1).replace('e-', '', 1).replace('e', '', 1).isdigit() is False:
         print(f"{first} is not an number.")
         print("Please enter a number, such as 2.5, -1.78E8, or 3:")
         first = input()
-    while second.lstrip('-').replace('.','',1).replace('E-','',1).replace('E','',1).replace('e-','',1).replace('e','',1).isdigit() is False:
+    while second.lstrip('-').replace('.', '', 1).replace('E-', '', 1).replace('E', '', 1).replace('e-', '', 1).replace('e', '', 1).isdigit() is False:
         print(f"{second} is not an number.")
         print("Please enter a number, such as 2.5, -1.78E8, or 3:")
         second = input()
     return first, second
+
 
 while operation == True:
     ans = choice()
@@ -4360,3 +4389,831 @@ while operation == True:
         print('invalid choice, try again.')
 ```
 
+## Chapter 9 Functions
+#### Page 380
+#### Question 1
+Devise a function called min(x,y) that returns the smaller of two double values. Test  
+the function with a simple driver.
+
+**C**
+```C
+#include <stdio.h>
+
+double min(double x, double y);
+
+int main(void)
+{
+    double x, y;
+
+    printf("Enter two doubles: ");
+    scanf("%lf %lf", &x, &y);
+    printf("The minimum of %.3f and %.3f is %.3f.\n", x, y, min(x, y));
+
+    return 0;
+}
+
+double min(double x, double y)
+{
+    return x < y ? x : y;
+}
+```
+
+**Python**
+```python
+def min(x,y):
+    x = float(x)
+    y = float(y)
+    if x < y:
+        return x
+    else:
+        return y
+
+if __name__ == "__main__":
+    x, y = [float(x) for x in input("Enter two doubles: ").split()]
+    print("The minimum of %.3f and %.3f is %.3f." % (x, y, (min(x, y))))
+```
+
+#### Question 2
+Devise a function chline(ch,i,j) that prints the requested character in columns i  
+through j. Test it in a simple driver.
+
+*Note*:  
+Chinese version (姜佑 译, 人民邮电出版社 ISBN 9787115390592) has an error  
+in translation here (Page 276).  
+In Chinese version, it request you to print character in i COLUMNS and j LINES.  
+Therefore, chline('k', 6, 3) will looks like:    
+```
+kkkkkk
+kkkkkk
+kkkkkk
+```
+
+Here I write both answers as below:  
+
+**S.Prata Version** 
+
+**C**
+```C
+#include <stdio.h>
+
+void chline(char ch, int i, int j);
+
+int main(void)
+{
+    chline('k', 3, 5);
+    return 0;
+}
+
+void chline(char ch, int i, int j)
+{
+    int x = 0, y = 0;
+    while (x < j)
+    {
+        printf(" ");
+        x++;
+    }
+    while (y < i)
+    {
+        putchar(ch);
+        y++;
+    }
+}
+```
+
+**Python**
+```python
+def chline(ch, i, j):
+    x = 0
+    y = 0
+    while x < j:
+        print(' ', end='')
+        x += 1
+    while y < i:
+        print(ch, end='')
+        y += 1
+
+chline('k', 3, 5)
+```
+
+**姜佑 version**  
+**C**  
+```C
+#include <stdio.h>
+
+void chline(char ch, int i, int j);
+
+int main(void)
+{
+    chline('9', 3, 5);
+    return 0;
+}
+
+void chline(char ch, int i, int j)
+{
+    int x = 0;
+    while (x < j)
+    {
+        int y = 0;
+        while (y < i)
+        {
+            putchar(ch);
+            y++;
+        }
+        printf("\n");
+        x++;
+    }
+}
+```
+
+**Python**
+```python
+def chline(ch, i, j):
+    x = 0
+
+    while x < j:
+        y = 0
+        while y < i:
+            print(ch, end='')
+            y += 1
+        print()
+        x += 1
+
+chline('kk',3,5)
+```
+
+#### Question 3
+Write a function that takes three arguments: a character and two integers. The character  
+is to be printed. The first integer specifies the number oftimes that the character is to  
+be printed on a line, and the second integer specifies the number of lines that are to be  
+printed. Write a program thatmakes use of this function.
+
+**C**
+```C
+#include <stdio.h>
+
+void printgrid(char ch, unsigned int cols, unsigned int rows);
+
+int main(void)
+{
+    char ch;
+    unsigned int rows, cols;
+
+    printf("Enter a character, number of rows and number of columns: ");
+    while (scanf("%c %u %u", &ch, &rows, &cols) == 3)
+    {
+        printgrid(ch, cols, rows);
+        printf("Enter a character, number of rows and number of columns: ");
+    }
+
+    return 0;
+}
+
+void printgrid(char ch, unsigned int cols, unsigned int rows)
+{
+    // prints given character in a block sized rows x cols
+    for (unsigned int i = 0; i < rows; i++)
+    {
+        for (unsigned int j = 0; j < cols; j++)
+        {
+            putchar(ch);
+        }
+        putchar('\n');
+    }
+}
+```
+
+**Python**
+```Python
+ch, x, y = [x for x in input(
+    "Enter a character, number of rows and number of columns: ").split()]
+
+def chline(ch, i, j):
+    x = 0
+    ch = str(ch)
+    while x < int(i):
+        y = 0
+        while y < int(j):
+            print(ch, end='')
+            y += 1
+        print()
+        x += 1
+
+chline(ch, x, y)
+```
+
+#### Question 4
+The harmonic mean of two numbers is obtained by taking the inverses of the two  
+numbers, averaging them, and taking the inverse of the result. Write a function that  
+takes two double arguments and returns the harmonic mean of the two numbers.
+
+**C**
+```C
+#include <stdio.h>
+
+double harmonic_mean(double, double);
+
+int main(void)
+{
+    double x, y;
+
+    printf("Harmonic means\n");
+    printf("Enter two numbers: ");
+    while (scanf("%lf %lf", &x, &y) == 2)
+    {
+        printf("%f\n", harmonic_mean(x, y));
+
+        printf("Enter two numbers: ");
+    }
+
+    return 0;
+}
+
+double harmonic_mean(double x, double y)
+{
+    return 2 / (1 / x + 1 / y);
+}
+```
+
+**Python**
+```Python
+def harmonic_mean(x, y):
+    return 2 / (1 / x + 1 / y)
+
+if __name__ == "__main__":
+    print("Harmonic means")
+    x, y = [float(x) for x in input("Enter two numbers: ").split()]
+    print(f"{harmonic_mean(x, y):.6f}")
+```
+
+#### Question 5
+Write and test a function called larger_of() that replaces the contents of two double  
+variables with the maximum of the two values. For example, larger_of(x,y) would  
+reset both x and y to the larger of the two.
+
+**C**
+```C
+#include <stdio.h>
+
+void larger_of(double *x, double *y);
+
+int main(void)
+{
+    double x, y;
+
+    printf("Test larger_of() function\n");
+    printf("=========================\n");
+    printf("Enter two numbers x and y: ");
+    while (scanf("%lf %lf", &x, &y) == 2)
+    {
+        printf("Before calling larger_of():\n");
+        printf("x = %f, y = %f\n", x, y);
+
+        larger_of(&x, &y);
+
+        printf("After calling larger_of():\n");
+        printf("x = %f, y = %f\n", x, y);
+
+        printf("Enter two numbers x and y: ");
+    }
+
+    return 0;
+}
+
+void larger_of(double *x, double *y)
+{
+    // replace contents of
+    if (*x > *y)
+        *y = *x;
+    else
+        *x = *y;
+}
+```
+
+**Python**
+```Python
+def large_of(x, y):
+    return max(x, y)
+
+if __name__ == "__main__":
+    print("Test larger_of() function")
+    print("=========================")
+    x, y = [float(x) for x in input("Enter two numbers: ").split()]
+    print("Before calling large_of():")
+    print(f"x = {x:.6f}, y = {y:.6f}")
+    x = y = large_of(x, y)
+    print("After calling larger_of():")
+    print(f"x = {x:.6f}, y = {y:.6f}")
+```
+
+#### Page 381
+#### Question 6
+Write and test a function that takes the addresses of three double variables as arguments  
+and that moves the value of the smallest variable into the first variable, the middle value  
+to the second variable, and the largest value into the third variable.
+
+**C**
+```C
+#include <stdio.h>
+
+void sort_variables(double *x, double *y, double *z);
+
+int main(void)
+{
+    double x, y, z;
+
+    printf("Test sort_variables():\n");
+    printf("Enter three numbers x, y and z:\n");
+    while (scanf("%lf %lf %lf", &x, &y, &z) == 3)
+    {
+        putchar('\n');
+        printf("Before calling sort_variables:\n");
+        printf("x = %f, y = %f, z = %f\n", x, y, z);
+
+        sort_variables(&x, &y, &z);
+
+        putchar('\n');
+        printf("After calling sort_variables:\n");
+        printf("x = %f, y = %f, z = %f\n", x, y, z);
+
+        putchar('\n');
+
+        printf("Enter three numbers x, y and z:\n");
+    }
+
+    return 0;
+}
+
+void sort_variables(double *x, double *y, double *z)
+{
+    double tmp;
+
+    if (*x > *y)
+    {
+        // switch x and y
+        tmp = *y;
+        *y = *x;
+        *x = tmp;
+    }
+
+    if (*y > *z)
+    {
+        // switch y and z
+        tmp = *z;
+        *z = *y;
+        *y = tmp;
+
+        if (*x > *y)
+        {
+            // switch x and y
+            tmp = *y;
+            *y = *x;
+            *x = tmp;
+        }
+    }
+}
+```
+
+**Python**
+```Python
+def sort_variables(x, y, z):
+    t = sorted([x, y, z])
+    return t[0], t[1], t[2]
+
+print("Before calling sort_variables:")
+x, y, z = [float(x) for x in input("Enter three value: ").split()]
+print(f"x = {x:.6f}, y = {y:.6f}, z = {z:.6f}")
+print("After calling sort_variables:")
+a, b, c = sort_variables(x, y, z)
+print(f"x = {a:.6f}, y = {b:.6f}, z = {c:.6f}")
+```
+
+#### Question 7
+Write a program that reads characters from the standard input to  end-of-file. For each  
+character, have the program report whether it is a  letter. If it is a letter, also report  
+its numerical location in the  alphabet. For example, c and C would both be letter 3.  
+Incorporate a  function that takes a character as an argument and returns the numerical  
+location if the character is a letter and that returns –1 otherwise.
+
+**C**
+```C
+#include <stdio.h>
+#include <ctype.h>
+
+int letter_location(char ch);
+
+int main(void)
+{
+    char ch;
+    int location;
+
+    while ((ch = getchar()) != EOF)
+    {
+        if ((location = letter_location(ch)) == -1)
+            printf("%c is not a letter\n", ch);
+        else
+            printf("%c is a letter: location = %d\n", ch, location);
+    } 
+
+    return 0;
+}
+
+int letter_location(char ch)
+{
+    if (isalpha(ch))
+    {
+        ch = tolower(ch);
+        return (ch - 'a' + 1);
+    }
+    else
+        return -1;
+}
+```
+
+**Python**
+```Python
+import sys
+
+def letter_location(ch):
+    if ch.isalpha():
+        return ord(ch.lower()) - ord('a') + 1
+    else:
+        return -1
+
+for line in sys.stdin:
+    for ch in line:
+        location = letter_location(ch)
+        if location == -1:
+            print(f"{ch} is not a letter.")
+        else:
+            print(f"{ch} is a ltter: location = {location}")
+```
+
+#### Question 8
+Chapter 6, “C Control Statements: Looping,” (Listing 6.20) shows a power() function  
+that returned the result of raising a type double number to a positive integer value.  
+Improve the function so that it correctly handles negative powers. Also, build into the  
+function that 0 to any power other than 0 is 0 and that any number to the 0 power is 1.  
+(It should report that 0 to the 0 is undefined, then say it’s using a value of 1.) Use a loop.  
+Test the function in a program.
+
+**C**
+```C
+#include <stdio.h>
+#include <stdlib.h> // prototype for abs()
+
+double power(double base, int exponent);
+
+int main(void)
+{
+    double base, output;
+    int exponent;
+
+    printf("Test power() function:\n");
+    printf("Enter a :double: base and :int: exponent: ");
+    while (scanf("%lf %d", &base, &exponent) == 2)
+    {
+        output = power(base, exponent);
+
+        printf("%f ^ %d = %f \n", base, exponent, output);
+
+        printf("Enter a :double: base and :int: exponent: ");
+    }
+
+    return 0;
+}
+
+double power(double base, int exponent)
+{
+    double power = base;
+
+    if (base == 0)
+    {
+        if (exponent == 0)
+        {
+            printf("Warning: 0 ^ 0 is undefined. Using 1.\n");
+            return 1.0;
+        }
+        else
+            return 0;
+    }
+
+    for (int i = 1; i < abs(exponent); i++)
+    {
+        power *= base;
+    }
+
+    if (exponent < 0)
+        power = 1 / power;
+
+    return power;
+}
+```
+
+**Python**
+```Python
+def power(decimal, integer):
+    num = 1
+    if integer > 0:
+        for _ in range(integer):
+            num = num*decimal
+    if integer < 0:
+        num = 1.0  # force floating point division
+        for _ in range(-integer):
+            num = num/decimal
+    return num
+
+On = True
+while On:
+    try:
+        base, exponent = [_ for _ in input(
+            "Enter a :double: base and :int: exponent: ").split()]
+        base = float(base)
+        exponent = int(exponent)
+        print(f"{base} ^ {exponent} = {power(base, exponent):.6f}")
+    except:
+        On = False
+```
+
+#### Question 9
+Redo Programming Exercise 8, but this time use a recursive function.
+
+**C**
+```C
+#include <stdio.h>
+#include <stdlib.h> // prototype for abs() 
+
+double power(double base, int exponent);
+
+int main(void)
+{
+    double base, output;
+    int exponent;
+
+    printf("Test power() function:\n");
+    printf("Enter a :double: base and :int: exponent: ");
+    while (scanf("%lf %d", &base, &exponent) == 2)
+    {
+        output = power(base, exponent);
+
+        printf("%f ^ %d = %f \n", base, exponent, output);
+
+        printf("Enter a :double: base and :int: exponent: ");
+    }
+
+    return 0;
+}
+
+double power(double base, int exponent)
+{
+    double dbl_power;
+
+    // handle powers of zero
+    if (base == 0)
+    {
+        if (exponent == 0)
+        {
+            printf("Warning: 0 ^ 0 is undefined. Using 1.\n");
+            return 1.0;
+        }
+        else
+            return 0;
+    }
+
+    if (exponent == 0) return 1; // stop recursion
+
+    dbl_power = base * power(base, abs(exponent) - 1); // recursion step
+
+    // if exponent is negative, take reciprocal
+    if (exponent < 0) dbl_power = 1 / dbl_power;
+
+    return dbl_power;
+}
+```
+
+**Python**
+```Python
+def power(base, exponent):
+    # handle powers of zero
+    if base == 0:
+        if exponent == 0:
+            return 1.0 # 0 ^ 0 is undefined. Using 1.
+        else:
+            return 0
+
+    if exponent == 0:
+        return 1 # stop recursion
+
+    dbl_power = base * power(base, abs(exponent) - 1)
+
+    # if exponent is negative, take reciprocal
+    if exponent < 0:
+        dbl_power = 1 / dbl_power
+
+    return dbl_power
+
+On = True
+while On:
+    try:
+        base, exponent = [_ for _ in input(
+            "Enter a :double: base and :int: exponent: ").split()]
+        base = float(base)
+        exponent = int(exponent)
+        print(f"{base} ^ {exponent} = {power(base, exponent):.6f}")
+    except:
+        On = False
+```
+
+#### Question 10
+Generalize the to_binary() function of Listing 9.8 to a to_base_n() function that  
+takes a second argument in the range 2–10. It then should print thenumber that is its  
+first argument to the number base given by the second argument. For example, to_  
+base_n(129,8) would display 201, the base-8equivalent of 129. Test the function in a  
+complete program.
+
+*Note*:  
+Chinese version (姜佑 译, 人民邮电出版社 ISBN 9787115390592) has an error  
+in translation here (Page 276).  
+It was printed as both two argument shall falls in the range 2 - 10.  
+
+**C**
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+void to_base_n(int integer, int base);
+
+int main(void)
+{
+    int integer, base;
+
+    printf("Test to_base_n() function\n");
+    printf("Enter an integer in base 10 and a base to convert to: ");
+    while (scanf("%d %d", &integer, &base) == 2)
+    {
+        to_base_n(integer, base);
+        putchar('\n');
+
+        printf("Enter an integer in base 10 and a base to convert to: ");
+    }
+
+    return 0;
+}
+
+void to_base_n(int integer, int base)
+{
+    // handle invalid bases
+    if (base < 2 || 10 < base)
+    {
+        printf("Error: base must be between 2 and 10.");
+        return;
+    }
+
+    // stop recursion
+    if (integer == 0)
+        return;
+
+    // handle negative integers
+    if (integer < 0)
+    {
+        putchar('-');
+        integer = abs(integer);
+    }
+
+    to_base_n(integer / base, base);
+    printf("%d", integer % base);
+    return;
+}
+```
+
+**Python**
+
+```Python
+'''
+Convert the decimal integer n to an integer in any base. The base of the base is denoted as base, base=8 means octal, base=10 means decimal.
+
+
+ANALYSE PROBLEM
+
+
+There are ten different symbols in the decimal system, resulting in a "table" related to the conversion of the decimal system: convSring = "0123456789".
+
+Decimal integers smaller than ten, convert to decimal, just check the "table" directly: convString[n]. For example, if the 7 base is converted to the decimal base, convString[7] = 7 is obtained by looking up the table.
+
+It is relatively troublesome to convert integers larger than ten to decimal. Our method is to divide the integers larger than ten into a series of integers smaller than ten, and then look up the "table" one by one. For example, the integer 769 is divided into three numbers smaller than ten, 7, 6, and 9, and then look up the "table" one by one to get 769.
+
+
+THE BASIC END CONDITION OF THE RECURSION OF THIS PROBLEM
+
+
+Through the above analysis, we know that whether it is an integer greater than ten or an integer less than ten, there is one thing in common, that is, we must eventually achieve the condition that the integer is less than ten.
+
+Therefore, in the three laws of recursion, we have found the "basic end condition", that is, an integer less than ten. The process of continuously disassembling integers is the process of evolving to the "basic end condition" in recursion.
+
+
+PROBLEM BREAKDOWN
+
+We use integer division (//) and remainder (%) operators to separate integers step by step to achieve our goal:
+
+    Divide by "base base" (//base).
+    Find the remainder (% base) of the "base".
+
+So the problem is broken down into:
+
+The remainder is always less than the base of the hexadecimal system, which is the "basic end condition" and can be directly converted to the "table".
+The integer quotient becomes a "smaller scale" problem, which is solved by recursively calling itself.
+
+According to the above analysis and problem decomposition, directly apply the three laws of recursion:
+
+1) Establish a minimum basic end condition. Just let the integer n be less than 10.
+
+2) Break down the problem into the same problems on a smaller scale. Use two calculation methods to divide integers and find the remainder to disassemble the integer n step by step:
+
+    Divide by "base base" (//base).
+    Find the remainder (% base) of the "base".
+
+3) Call itself. When n // base, use this function again, the previous n becomes n//base, and the previous base is still base.
+
+So it is easy to write the code:
+'''
+
+def to_base_n(n, base):
+    '''
+    n:      int type, decimal integer.
+    base:   The base to be converted.
+    '''
+    convertString = "0123456789"
+    if n < base:
+        return convertString[n]
+    else:
+        # the floor division // rounds the result down to the nearest whole number
+        return to_base_n(n//base, base) + convertString[n % base]
+
+print("Test to_base_n() function")
+On = True
+while On:
+    try:
+        n, base = [int(_) for _ in input(
+            "Enter an integer in base 10 and a base to convert to: ").split()]
+        if base > 10 or base < 2:
+            print("Error: base must be between 2 and 10.")
+            continue
+        ans = to_base_n(n, base)
+        print(ans)
+    except:
+        On = False
+```
+
+#### Question 11
+Write and test a Fibonacci() function that uses a loop instead of recursion to calculate  
+Fibonacci numbers.
+
+**C**
+```C
+#include <stdio.h>
+
+int Fibonacci(int n);
+
+int main(void)
+{
+    int n;
+
+    printf("How many terms?");
+    scanf("%d", &n);
+    Fibonacci(n);
+
+    return 0;
+}
+
+int Fibonacci(int n)
+{
+    int first = 0, second = 1, next, c;
+
+    for (c = 0; c < n; c++)
+    {
+        if (c <= 1)
+            next = c;
+        else
+        {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%d ", next);
+    }
+}
+```
+
+**Python**
+```Python
+def Fibonacci(num):
+    result = [0, 1]
+    # _ is a standard placeholder name for ignored members in a for-loop and tuple assignment
+    for _ in range(num-2):
+        result.append(result[-2] + result[-1])
+    return result
+
+nterms = int(input("How many terms?"))
+result = Fibonacci(nterms)
+for x in result:
+    print(x, end=' ')
+```
