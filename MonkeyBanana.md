@@ -140,3 +140,26 @@ Output:
 6. 第6只猴吃1个, 拿走54431.0个。
 7. 第7只猴吃1个, 拿走46655.0个。
 ```
+
+解法三：
+```python
+banana = 8
+while True:
+    total = banana
+    enough = True
+    for _ in range(7):
+        if (total - 1) % 7 == 0:
+            total = (total - 1) // 7 * 6
+        else:
+            enough = False
+            break
+    if enough:
+        print(banana)
+        break
+    banana += 7
+```
+
+Output:
+```powershell
+823537
+```
