@@ -667,3 +667,328 @@ arr.some(function(item, index, arr){
 console.log(res)  // false
 ```
 
+---
+
+## 字符串常用方法
+
+```javascript
+// 1. 按照索引获取字符
+语法： 字符串.charAT(索引)
+作用： 获取对应索引位置的字符
+返回值： 对应索引位置的字符
+
+var str = '你好，微型计算机'
+
+var res = str.charAt(3)
+console.log(res)  // 微
+
+// 2. 转小写
+语法： 字符串.toLowerCase()
+作用： 将字符串内的字母全部转换成 小写
+返回值： 转换好的字符串
+
+var str = 'Hello, Rilla'
+
+var res = str.toLowerCase()
+console.log(res)  // hello, rilla
+
+// 3. 转大写
+语法： 字符串.toUpperCase()
+作用： 将字符串内的字母全部转换成 大写
+返回值： 转换好的字符串
+
+var res = str.toUpperCase()
+console.log(res)  // HELLO, RILLA
+
+// 4. 替换字符串
+语法： 字符串.replace(换下内容， 换上内容)
+作用： 将字符串内 第一个 满足换下内容的片段替换成换上内容
+返回值： 替换好的字符串
+
+var str = '你好，微型计算机，微型计算机'
+
+var res = str.replace('微型', '个人')
+console.log(res)  // 你好，个人计算机，微型计算机
+
+// 5.去除首尾空格
+语法： 字符串.trim()
+作用： 去除字符串手尾的空格
+返回值： 去除空格后的字符串
+
+var str = '     你好，世界      '
+
+var res = str.trim()
+console.log(res)  // 你好，世界
+
+// 6.切割字符串
+语法： 字符串.split(分隔符)
+作用： 按照分隔符将字符串切割成为一个数组
+返回值： 切割后的数组
+
+var str = '2070-3-22'
+
+var res = str.split('-')
+console.log(res)  // ["2070","3","22"]
+
+// 7.截取字符串
+语法： 字符串.substr(开始索引，多少个)
+作用： 截取字符串
+返回值： 截取出来的字符串
+
+// 8.截取字符串
+语法： 字符串.substring(开始索引，结束索引)
+作用： 截取字符串
+返回值： 截取出来的字符串
+
+// 9.截取字符串
+语法： 字符串.slice(开始索引，结束索引)
+作用： 截取字符串
+返回值： 截取出来的字符串
+
+var str = '你好，微型计算机'
+
+var res1 = str.substr(1, 6)
+console.log(res1)  // 好，微型计算
+var res2 = str.substring(1, 6)
+console.log(res2)  // 好，微型计
+var res3 = str.slice(1, 6)
+console.log(res3)  // 好，微型计
+```
+
+---
+
+## 数字常用方法
+```javascript
+// 1. 0 ~ 1 之间的随机小数
+语法： Math.random()
+作用： 获取 0 ~ 1 之间的随机小数，包含 0，但是不包含 1
+返回值： 0 ~ 1 之间的随机小数
+
+var res = Math.random()
+console.log(res)  // 0.2550728782763293
+
+// 2.四舍五入取整
+语法： Math.round()
+作用： 对数字进行 四舍五入 取整
+返回值： 四舍五入后的整数
+
+var res1 = Math.round(10.4)
+console.log(res1)  // 10
+
+var res2 = Math.round(10.5)
+console.log(res2)  // 11
+
+// 3.向上取整
+语法： Math.ceil(数字)
+作用： 对数字进行 向上 取整
+返回值： 向上取整后的整数
+
+var res1 = Math.ceil(10.4)
+console.log(res1)  // 11
+
+// 4.向下取整
+语法： Math.floor(数字)
+作用： 对数字进行 向下 取整
+返回值： 向下取整后的整数
+
+var res2 = Math.floor(10.5)
+console.log(res2)  // 10
+
+// 5.取幂
+语法： Math.pow(底数，指数)
+作用： 对数字进行 取幂 运算
+返回值： 取幂后的结果
+
+var res = Math.pow(2, 5)
+console.log(res)  // 32
+
+// 6.二次方根
+语法： Math.sqrt(数字)
+作用： 对数字进行 二次方根 运算
+返回值： 二次方根后的结果
+
+var res = Math.sqrt(4)
+console.log(res)  // 2
+
+// 7.取绝对值
+语法： Math.abs(数字)
+作用： 对数字进行 绝对值 运算
+返回值： 绝对值运算后的结果
+
+var res = Math.abs(-10)
+console.log(res)  // 10
+
+// 8.取最大值
+语法： Math.max(数字1, 数字2, 数字3, ...)
+作用： 获取若干数字的最大值
+返回值： 若干个数字中的最大值
+
+var res = Math.max(-10, 20, -19, 35, 22, 31)
+console.log(res)  // -5
+
+// 9.取最小值
+语法： Math.min(数字1, 数字2, 数字3, ...)
+作用： 获取若干数字的最小值
+返回值： 若干个数字中的最小值
+
+var res = Math.max(-10, 20, -19, 35, 22, 31)
+console.log(res)  // -19
+
+// 10.近似 π 的值
+语法： Math.PI
+作用： 得到一个近似 π 的值
+返回值： 若干个数字中的最小值
+
+var res = Math.PI
+console.log(res)  // 3.141592653589793
+```
+
+---
+
+## 时间常用方法 - Date
+
+```javascript
+// 创建一个时间对象
+var time = new Date()
+console.log(time)  // Thu Dec 09 2021 08:02:39 GMT-0500 (Eastern Standard Time)
+
+// 创建一个指定时间节点的时间对象
+var time = new Date(年,月,日,时,分,秒)  // 0表示1月 11表示12月
+
+var time = new Date(2002, 1, 23, 11, 22, 18)  // 2002年2月23日11点22分18秒
+console.log(time)  // Sat Feb 23 2002 11:22:18 GMT-0500 (Eastern Standard Time)
+```
+
+获取
+
+```javascript
+// 1. 获取到时间对象中的 年份 信息
+时间对象.getFullYear()
+
+// 创建一个时间对象
+var time = new Date()
+// 获取时间对象中的年份信息
+var year = time.getFullYear()
+// 输出年份信息
+console.log(year)  // 2021
+
+// 2. 获取到时间对象中的 月份 信息
+时间对象.getMonth()
+// 注意这里依旧是0表示1月 11表示12月
+
+var month = time.getMonth()
+console.log(month)  // 11
+
+// 3. 获取到时间对象中的 日期 信息
+时间对象.getDate()
+
+var date = time.getDate()
+console.log(date)  // 9
+
+// 4. 获取到时间对象中的 小时 信息
+时间对象.getHour()
+
+var time = new Date()
+console.log(time)  // Thu Dec 09 2021 08:16:28 GMT-0500 (Eastern Standard Time)
+var hours = time.getHours()
+console.log(hours)  // 8
+
+// 5. 获取到时间对象中的 分钟 信息
+时间对象.getMinutes()
+
+var time = new Date()
+console.log(time)  // Thu Dec 09 2021 08:16:50 GMT-0500 (Eastern Standard Time
+var minutes = time.getMinutes()
+console.log(minutes)  // 16
+
+// 6. 获取到时间对象中的 秒钟 信息
+时间对象.getSeconds()
+
+var time = new Date()
+console.log(time)  // Thu Dec 09 2021 08:18:31 GMT-0500 (Eastern Standard Time)
+var seconds = time.getSeconds()
+console.log(seconds)  // 31
+
+// 7. 获取到时间对象中的 星期 信息
+时间对象.getDay()
+// 0表示周日 1-6分别表示周一到周六
+
+var time = new Date()
+console.log(time)  // Thu Dec 09 2021 08:20:21 GMT-0500 (Eastern Standard Time)
+var week = time.getDay()
+console.log(week)  // 4
+
+// 8. 获取到时间对象中的 时间戳 信息
+时间对象.getTime()
+// 与 格林威治时间 1970-1-1 0:0:0 相差的 毫秒数
+
+var time = new Date()
+console.log(time)  // Thu Dec 09 2021 08:22:32 GMT-0500 (Eastern Standard Time)
+var ms = time.getTime()
+console.log(ms)  // 1639056152619
+```
+
+设置
+
+```javascript
+// 1. 设置时间对象中的 年份 信息
+时间对象.setFullYear(数字)
+
+// 2. 设置时间对象中的 月份 信息
+时间对象.setMonth(数字)
+// 注意这里依旧是0表示1月 11表示12月
+
+// 3. 设置时间对象中的 日期 信息
+时间对象.setDate(数字)
+
+// 4. 设置时间对象中的 小时 信息
+时间对象.setHour(数字)
+
+// 5. 设置时间对象中的 分钟 信息
+时间对象.setMinutes(数字)
+
+// 6. 设置时间对象中的 秒钟 信息
+时间对象.setSeconds(数字)
+
+// 7. 设置时间对象中的 时间戳 信息
+时间对象.setTime(数字)
+// 与 格林威治时间 1970-1-1 0:0:0 相差的 毫秒数
+
+示例一:
+// 创建一个时间对象
+var time = new Date()
+
+// 输出一次
+console.log(time)  // Thu Dec 09 2021 08:31:48 GMT-0500 (Eastern Standard Time)
+
+// 设置年份信息
+var year = time.setFullYear(2002)
+// 设置月份信息
+var year = time.setMonth(2)
+// 设置日期信息
+var year = time.setDate(23)
+// 设置小时信息
+var year = time.setHours(11)
+// 设置分钟信息
+var year = time.setMinutes(22)
+// 设置秒钟信息
+var year = time.setSeconds(18)
+
+// 再次输出时间对象
+console.log(time)  // Sat Mar 23 2002 11:22:18 GMT-0500 (Eastern Standard Time)
+
+
+示例二:
+
+// 创建一个时间对象
+var time = new Date()
+
+// 输出一次
+console.log(time)  // Thu Dec 09 2021 08:33:31 GMT-0500 (Eastern Standard Time)
+
+// 使用时间戳直接定位时间节点
+time.setTime(1016853738151)
+
+// 再次输出时间对象
+console.log(time)  // Fri Mar 22 2002 22:22:18 GMT-0500 (Eastern Standard Time)
+```
