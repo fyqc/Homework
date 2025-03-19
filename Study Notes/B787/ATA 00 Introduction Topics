@@ -1,0 +1,39 @@
+Boeing 787 ATA 00 Introduction Topics quiz questions based on available knowledge and standard aircraft maintenance practices:
+
+1. *What are the precautions to be taken when towing a B787?*  
+   When towing a Boeing 787, key precautions include ensuring the towing vehicle is appropriately sized and rated for the aircraft’s weight, confirming all ground locks (e.g., landing gear pins) are removed except as specified, checking that the nose gear steering bypass pin is installed to disable hydraulic steering, verifying clearance from obstacles, maintaining proper towing angles (typically within 65 degrees of the nose gear limit), ensuring communication between the tow crew and cockpit personnel, and confirming brakes are released with hydraulic systems depressurized or powered as required. Additionally, hazard areas around engines (intake and exhaust) must be avoided, and personnel should follow Boeing-specific towing procedures outlined in the Aircraft Maintenance Manual (AMM).
+
+2. *Where are the primary aircraft jacking points?*  
+   The primary jacking points on the Boeing 787 are located at three positions: one under the nose (forward fuselage, typically near the nose gear bay) and two under the wings (one at each main landing gear attachment area). These points are designed to distribute the aircraft’s weight evenly during lifting and are marked on the aircraft structure with placards or in the AMM for precise identification.
+
+3. *Where are the inclinometers located to check if the aircraft is level?*  
+   On the Boeing 787, inclinometers (used to measure pitch and roll for leveling) are typically located in the main wheel well areas (near the main landing gear) and sometimes in the forward fuselage or avionics bay, depending on specific maintenance requirements. Exact locations are detailed in the AMM under ATA Chapter 07 (Lifting and Shoring) or Chapter 08 (Leveling and Weighing), but common practice places them where technicians can access them during jacking or weighing procedures.
+
+4. *What are the 2 types of Toolbox?*  
+   The two types of Toolbox for the Boeing 787 are *Toolbox Online* and *Toolbox Remote*. Toolbox Online is a web-based platform for accessing maintenance data, while Toolbox Remote is a standalone application installed on a maintenance laptop for onboard use, providing access to critical data without an internet connection.
+
+5. *Where is the Toolbox Remote data stored?*  
+   Toolbox Remote data is stored locally on the maintenance laptop’s hard drive. It is preloaded or synced from Boeing’s maintenance data systems to ensure availability during onboard maintenance, even in environments without internet access.
+
+6. *The Engineering drawings and other engineering information can only be obtained from?*  
+   Engineering drawings and other engineering information for the Boeing 787 can only be obtained from *Boeing* through official channels, such as the MyBoeingFleet portal or direct requests to Boeing’s Data & Services Management team, as they are proprietary and controlled under Boeing’s documentation system.
+
+7. *What is the 6-digit ATA code in this DMC – (DMC-B787-A-23-15-00-01A-300B-A)?*  
+   In the Data Module Code (DMC-B787-A-23-15-00-01A-300B-A), the 6-digit ATA code is *23-15-00*. This breaks down as:  
+   - *23*: Communications (ATA Chapter)  
+   - *15*: Specific system or subsystem (e.g., passenger address system)  
+   - *00*: General or initial procedure.  
+   The DMC structure follows Boeing’s standard coding, where the ATA chapter and section are embedded in the identifier.
+
+8. *Toolbox Remote on the maintenance laptop for on board maintenance has what applications?*  
+   Toolbox Remote includes applications such as the *Aircraft Maintenance Manual (AMM), **Fault Isolation Manual (FIM), **Wiring Diagram Manual (WDM), **System Description, **Schematics, and **Parts Data*. These allow technicians to perform troubleshooting, repairs, and system checks directly on the aircraft.
+
+9. *What button must be selected in Toolbox Remote for troubleshooting procedures?*  
+   In Toolbox Remote, the *“System”* button must be selected to access troubleshooting procedures. This typically opens the Fault Isolation Manual (FIM) or related fault-finding tools within the application.
+
+10. *How is Toolbox Online accessed for data retrieval?*  
+   Toolbox Online is accessed via a web browser through Boeing’s *MyBoeingFleet* portal. It requires an internet connection and authorized user credentials (e.g., login and password) to retrieve maintenance data, documents, and other technical information remotely.
+
+These answers reflect standard Boeing 787 maintenance practices and Toolbox system functionality as understood from industry norms and available documentation. 
+
+For precise details, always refer to the Boeing 787 AMM or Toolbox user guides.
