@@ -1,0 +1,78 @@
+ATA 21 27 26 56
+
+A switch/controller in the window reveal lets the passenger control the quantity of light that comes through the window
+
+The APU stops automatically, and the fire bottle discharges 15 seconds later.
+
+The WWFDS also supplies a signal to flight controls to set a small gap in spoilers 6 and 9. This occurs if a wheel well ambient temperature, measured by 2 sensor elements above 1 axle, is more than 140F (60C). The result is a cooling airflow through the wheel well.
+
+SMCU monitors the cargo squibs integrity and provides discharge power for the cargo bottles and flow control valves.
+
+Aircon synoptic page is shown in the MFD
+
+The alternate ventilation system (AVS) lets external air go directly into the airplane when there is a loss of conditioned air inflow (LOCI) condition. 
+
+The AVS on B787-9 uses both the FWD and AFT outflow valves. When the AVS operates, the FWD outflow valve move to 10 o'clock position and the AFT outflow valve to 1 o'clock position
+
+Bulk Cargo Zone Temp Sensor is a dual element sensor and sends info to the CDN through 2 RDCs.
+
+FWD E&E cooling exhaust overboard valve power  is +28v dc from remote power distribution unit (RPDU) 73.
+
+The valve control units (VCU) control the OFVs in the automatic mode. 
+
+The operating modes of the outflow valves are Auto and Manual. 3 motors – 2 Auto and 1 Manual
+
+When power first goes to the PCU, the PCU software selects one PCU channel to be in control and the other channel to operate in a tracking mode. (The control and tracking channels change at each flight).
+
+The cabin air compressor (CAC) deflector door protects the CAC inlet from FOD or nose gear water spray while the airplane is on ground.
+
+The 2 elements of a loop must sense the over-temperature condition at the same time.
+
+1. There is a zonal dryer in the forward and aft crown areas.  2. The moist air goes through the lower recirculation air system to the compact mixer.
+
+The PECS uses primary and secondary heat exchangers in each loop to make the coolant cool: - Primary - ram air heat exchangers in the pack bays - Secondary - lavatory/galley ventilation system heat exchangers.
+
+The Surface lock Switch in P5 locks control surfaces in PFCF modes Normal & Secondary flight controls and for HLF modes  Primary and Secondary for maintenance use only.
+
+Three of the flight control electronics (FCE) cabinets have an FCM. FCE C2 does not have an FCM. During Normal Mode FCM controls surface commands based on inputs from crew
+
+Shows surface positions, hydraulic system status & flight control modes 
+
+Flight control major and minor rigging pages are accessed through the Central Maintenance Computing Function (CMCF) line Maintenance on ATA 27
+
+The control wheel back drive actuator (BDA) moves the wheel when: - The autopilot gives a roll command (to match the flight control surface position). 
+
+The control column backdrive actuator (BDA) moves the control column during autopilot operation. 
+It is engaged during autopilot operation after takeoff and for climb, cruise, and descent operations. 
+Movement of the BDA gives the flight crew an indication of the autopilot pitch commands sent to the primary flight control surfaces.   
+
+The rudder pedal back drive actuator (BDA) moves the rudder pedals during auto land operation. 
+
+When Auto pilot is engaged all the 3 flight controls are moved by the BDA and no cable backup.
+
+The feel and centering unit is a spring-loaded cam and roller unit that:
+- Gives resistance (feel) to control wheel movement
+- Moves the wheel to the center position when the pilot lets go of the wheel
+
+The empennage door actuation system (EDAS) decreases drag forces on the vertical and horizontal stabilizers.
+
+The FCEs send position command data to an REU at each of the 4 elevator PCUs. (2 on each side L & R)
+
+The EMCUs control the horizontal stabilizer trim actuator (HSTA).
+
+Spoiler droop improves lift by control of the gap between the trailing edge of the spoilers and the upper surface of the flaps.
+In addition to speedbrake and roll control, the lateral control surfaces may be drooped to improve aerodynamic performance.
+
+If all the FCEs fails, the  RVDT in the captain cluster connects directly to a spoiler electronics motor control unit (EMCU) for direct operation of spoiler 4. 
+The other RVDT in the first officer cluster connects directly to a spoiler EMCU for direct operation of spoiler 11.
+
+RVDT IN Capt goes to spoiler 4.
+RVDT in FO goes to spoiler 11.
+
+The outboard slat skew system has a detection mechanism assembly (DMA) that contains a sensor, target, and spring assembly. 
+A lanyard goes along the back of the outboard slats and connects to the DMA. 
+Skew movement of the slats pulls on the DMA, and the DMA sensor gives a skew indication. 
+Slat skew sensors at the inboard LE flap monitor skew and asymmetry conditions. 
+These sensors connect to the FCEs. The FCEs stops slat operation for skew and asymmetry conditions in the high lift primary and secondary modes. 
+Flight deck indications show for skew and asymmetry conditions in all high lift modes
+
