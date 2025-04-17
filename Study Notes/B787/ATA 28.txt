@@ -1,0 +1,73 @@
+ATA 28
+The vent system prevents pressure differences between the tanks and ambient air.
+The engine fuel feed system uses fuel boost (variable frequency) pumps and override/jettison (OJ) pumps to make fuel pressure for the engines.
+The O/J pumps reside in the center tank.
+The O/J pump pressure overrides the fuel boost pump pressure. This makes sure that the center tank fuel is used first.
+On APU battery start, the DC pump runs automatically.
+The fuel density sensors (FDS) measure the fuel density by sensing the resonant frequency of the fuel.
+
+List 4 places you can see fuel quantity data? 
+EICAS, fuel synoptic page, fuel maintenance data page, refueling control panel.
+
+What is the difference between the fuel tank access panels on the inboard side of the engine strut and the access panels on the outboard side? 
+The inboard are high impact panels to prevent runway debris damage
+
+Which condition can cause a fuel pump not to operate even if it is selected to operate from P5 fuel pump? 
+Load shedding, low pressure and or high temperature. 
+
+What is used to pressurize the fuel flow to the APU during battery start? 
+A DC pump is used for starting with battery
+
+How many fuel tanks are there, what are they called? 
+Left, Centre, Right 
+
+What are the capacities of the fuel Tanks? 
+Wing tanks each - 21,000L
+Centre tank - 84,000L
+
+What does an open Pressure Relief VLV Indicate? 
+Blocked Vent Scoop or Flame Arrester
+
+Where are the Water Scavenge Jet Pumps located? There is one in each Wing Tank and feed Aft Main Pumps only
+
+What is the purpose of the (2) Fuel Scavenge Isolation Valves? 
+Allow Motive Flow to Centre tank Jet Pumps which pulls fuel from Centre tank to supply Wing Tanks
+
+Where are the Fuel Tanks vented? 
+Surge Tanks
+
+Where does the fuel system vent overboard on the 787? 
+At the bottom of the surge tank outboard end of the wing
+
+Why are Fuel Tanks Vented? 
+Used to equalize pressure between inside and outside of the tank. This prevents tanks collapsing
+
+What is the purpose of the venting system? 
+Prevents high pressure differences with outside air
+
+Which Tank can be fuelled on Battery power only? 
+Left Main Tank only.
+
+Which tank can be fuelled with only battery power applied to the airplane? 
+Left tank
+
+Which Fuel Tank is used first during engine operation? 
+Centre
+
+There is fuel in all 3 tanks. During usual operations, which tank is used first? How is it done? 
+The centre tank as the centre pumps (override/jettison) have a higher rating of output pressure.
+
+How is APU started with no GRD power available? 
+APU start switch starts operation of 28V DC fuel pump for APU start.
+
+What is the purpose of the Fuel Density Sensors? 
+To Calculate Fuel Weight 
+
+What is the fuel density sensor used for? 
+Measure the resonant frequency of the fuel to calculate the fuel weight.
+
+How many FQDC’s per tank? 
+One per tank, each has Two Channels
+
+Each fuel tank, how many channel inputs from the fuel quantity data concentrator is used for fuel quantity indication?
+2
