@@ -1,0 +1,241 @@
+28_47_33_38_25_49_51-57_30
+ATA 28
+The vent system prevents pressure differences between the tanks and ambient air.
+The engine fuel feed system uses fuel boost (variable frequency) pumps and override/jettison (OJ) pumps to make fuel pressure for the engines.
+The O/J pumps reside in the center tank.
+The O/J pump pressure overrides the fuel boost pump pressure. This makes sure that the center tank fuel is used first.
+On APU battery start, the DC pump runs automatically.
+The fuel density sensors (FDS) measure the fuel density by sensing the resonant frequency of the fuel.
+
+List 4 places you can see fuel quantity data? 
+EICAS, fuel synoptic page, fuel maintenance data page, refueling control panel.
+
+What is the difference between the fuel tank access panels on the inboard side of the engine strut and the access panels on the outboard side? 
+The inboard are high impact panels to prevent runway debris damage
+
+Which condition can cause a fuel pump not to operate even if it is selected to operate from P5 fuel pump? 
+Load shedding, low pressure and or high temperature. 
+
+What is used to pressurize the fuel flow to the APU during battery start? 
+A DC pump is used for starting with battery
+
+How many fuel tanks are there, what are they called? 
+Left, Centre, Right 
+
+What are the capacities of the fuel Tanks? 
+Wing tanks each - 21,000L
+Centre tank - 84,000L
+
+What does an open Pressure Relief VLV Indicate? 
+Blocked Vent Scoop or Flame Arrester
+
+Where are the Water Scavenge Jet Pumps located? There is one in each Wing Tank and feed Aft Main Pumps only
+
+What is the purpose of the (2) Fuel Scavenge Isolation Valves? 
+Allow Motive Flow to Centre tank Jet Pumps which pulls fuel from Centre tank to supply Wing Tanks
+
+Where are the Fuel Tanks vented? 
+Surge Tanks
+
+Where does the fuel system vent overboard on the 787? 
+At the bottom of the surge tank outboard end of the wing
+
+Why are Fuel Tanks Vented? 
+Used to equalize pressure between inside and outside of the tank. This prevents tanks collapsing
+
+What is the purpose of the venting system? 
+Prevents high pressure differences with outside air
+
+Which Tank can be fuelled on Battery power only? 
+Left Main Tank only.
+
+Which tank can be fuelled with only battery power applied to the airplane? 
+Left tank
+
+Which Fuel Tank is used first during engine operation? 
+Centre
+
+There is fuel in all 3 tanks. During usual operations, which tank is used first? How is it done? 
+The centre tank as the centre pumps (override/jettison) have a higher rating of output pressure.
+
+How is APU started with no GRD power available? 
+APU start switch starts operation of 28V DC fuel pump for APU start.
+
+What is the purpose of the Fuel Density Sensors? 
+To Calculate Fuel Weight 
+
+What is the fuel density sensor used for? 
+Measure the resonant frequency of the fuel to calculate the fuel weight.
+
+How many FQDC’s per tank? 
+One per tank, each has Two Channels
+
+Each fuel tank, how many channel inputs from the fuel quantity data concentrator is used for fuel quantity indication?
+2
+
+
+ATA 47
+The air separation module (ASM) separates oxygen from the nitrogen generation system (NGS) 
+compressed air to make the nitrogen enriched air (NEA) and oxygen enriched air (OEA).
+
+The ground operation of the nitrogen generation system (NGS) is through the SPECIAL FUNCTIONS 
+menu of the central maintenance computing function (CMCF).
+
+How does the NGS decrease the oxygen content of the air in the fuel tank? 
+Separates the oxygen from the air through air separator module.
+
+What are the three main parts of the NGS? 
+Motor Driven Compressor / Heat Exchanger / Air Separation Module
+
+How do maintenance personnel operate the NGS (Nitrogen Generation System) on the ground?
+CMCF, Special Function
+
+What controls the NGS system operation? 
+one copy of the NGS hosted software application located in GPM4 in the CCR.
+
+
+ATA 33
+If airplane power fails, lights can automatically get power from batteries.
+    • The batteries are in wireless emergency lighting system (WELS) control units (WCU).
+
+The four prime units (Wireless Control Unit Prime x4)
+    • Control the emergency lights that they connect to
+    • Receive health status data from the remote units through a wireless connection.
+
+Identify Nose Landing Gear mount lights.
+4 (Four) - 2 Landing, 2 Taxi
+
+The lights in the forward cargo compartment are controlled by two switches:
+    • Outside (on the P43 panel)
+    • Inside (near the forward cargo door).
+
+Passenger cabin Emergency Light are controlled by Which unit? 
+Prime (type of Wireless Control Unit (WCU))
+
+The WCUs give battery power and control to the emergency lights and signs.
+
+Emergency light status and LED control is provided which unit? 
+Remote Units (type of WCU)
+
+
+ATA 38
+The vacuum blower motor operates on 235v ac, 3 phase, 360-800 Hz.
+
+Typical Vacuum Blower Motor operates using what voltage? 235V AC
+
+What is the purpose of UV UltraViolet in Line Treatment? 
+Reduces or eliminates Bacterial growth in potable water system.
+
+Where is the Mode select-quantity indication module located? 
+Potable water service panel.
+
+
+ATA 25
+The indicator arrow on the top surface of the forward lug bolt align with the RED indicator dot when the lug bolt is unlocked.
+
+Passenger seat securing on the seat track - Indicator arrow on the top surface of the forward
+lug bolt align with the RED indicator dot when the lug bolt is unlocked.
+
+What is meant by emergency decent device? 
+Flight deck crew escape inertia reel.
+
+What is meant if the seat track fitting position indicator is showing red?
+Seat is unlocked
+
+Where is the flight attendant rest located in cabin? 
+AFT CABIN OVERHEAD
+
+Identify the 3 switch positions located on the evacuation command switch? 
+On / ARM / Off
+
+
+ATA 49
+THE DE-PRIME VALVE OPENS DURING START AND SHUTDOWN TO DECREASE THE LOAD ON THE APU STARTER GENERATOR (ASG)
+
+When the oil is cold, it is very thick. This increases the energy necessary to 
+turn the APU during start. The APU oil pump de-prime valve opens to keep oil 
+from the oil pump. The oil goes back to the oil pump inlet. The de-prime 
+valve also opens during the APU shutdown. This helps the oil go back to the sump.
+
+APU BATTERY & PMG
+The fuel module gets electrical power from the APU hot battery bus during APU start. 
+The fuel module gets electrical power from the permanent magnetic generator (PMG) after the APU starts.
+
+The is no cool down period when the APU is shut down by the APU fire shutdown switch on the P40 panel
+
+CAUTION - Do not remove the APUC and the inlet sensor module at the same time.
+IF YOU REMOVE THE APUC AND INLET SENSOR MODULE AT THE SAME TIME, THE MAINTENANCE DATA IS LOST.
+
+If the APU is running in the unattended mode and low oil pressure, high oil temp.
+or high EGT condition is detected the APU does a protective shutdown. 
+The EICAS caution message, APU LIMIT to show. 
+
+Is it possible to pressurize the airplane with bleed air from the APU?
+No, No load compressor 
+
+What does the APU do? It supplies only electrical power for ground and air. 
+
+What is the purpose of the APU inlet door switch? 
+Inlet door position indication. 
+
+What electrical system component selects the electrical power source during an APU start? 
+Electrical power system’s BPCU. 
+
+Why is it not possible to replace the APU lubrication and scavenge pumps? 
+They are not LRU, they're part of the gearbox 
+
+What is the purpose of the de-prime valve? 
+Opens during cold start to allow air to go to the supply pump and opens at shut down to return oil to the gearbox area.
+
+What controls the speed of the APU? 
+The APUC through the dc motor driven in the fuel module
+
+What supplies power to the fuel module during APU starting and running? The APUC until 60%
+
+When does the APU shutdown from the P40 panel,? 
+Immediately 
+
+The APU operates in the attended mode when the airplane is:
+in the air or on the ground with at least one engine running. 
+
+It is not recommended that you replace the APU controller (APUC) while you replace the:
+Inlet sensor module 
+
+The APU is operating in the attended mode. APU low oil pressure or high EGT condition is detected. 
+What are the indications? What do you do? 
+EICAS message shows APU LIMITS and must be shut down manually.
+
+
+ATA 51-57
+The 787 has carbon and fiberglass components.
+- Carbon fiber composites are often called carbon fiber reinforced plastic (CFRP).
+
+
+ATA 30
+The Slat heater mats get 235v ac from P100, P200, and the P150 power panels
+through the wing ice protection control unit (WIPCU) and it gets power from the RPDU 
+
+Wing ice protection controller receives its control power from what unit? 
+Remote power distribution unit (RPDU)
+
+WECU controls logic and power supply to the wiper motor
+
+How many heater mats in each slat and name them? 3 inboard, centre and outboard. 
+
+Each slat heater mat has how many zones? 
+2 zones, zone A and B
+
+Slat temperature signal and voltage is controlled by which unit? 
+Wing ice protection controller 
+
+Solid state power controllers (SSPC) are used to heat which items and where does it gets power from? 
+Pitot tube, total air temperature TAT vanes and angle of attack AOA vanes, 
+The heater for these data sensors gets power from the P300 and P400 115v ac buses thru remote power distribution units (RPDU)
+
+SSPC are used to power the Pitot probes, TAT probe and AOA sensors.
+
+How many Wiper Electronic Control Units (WECU) and what are the power requirements? 2 each (WECU) 115VAC
+How many positions on wiper switch? 4 positions- OFF, INT,LOW, and HIGH
+
+Both left and right Ice Detection Vanes’s send information thru Air Data Reference Function ADRF to which unit? 
+Remote Data Concentrator then to the Common Data Network 
