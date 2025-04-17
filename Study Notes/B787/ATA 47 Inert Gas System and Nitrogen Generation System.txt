@@ -1,0 +1,17 @@
+The air separation module (ASM) separates oxygen from the nitrogen generation system (NGS) 
+compressed air to make the nitrogen enriched air (NEA) and oxygen enriched air (OEA).
+
+The ground operation of the nitrogen generation system (NGS) is through the SPECIAL FUNCTIONS 
+menu of the central maintenance computing function (CMCF).
+
+How does the NGS decrease the oxygen content of the air in the fuel tank? 
+Separates the oxygen from the air through air separator module.
+
+What are the three main parts of the NGS? 
+Motor Driven Compressor / Heat Exchanger / Air Separation Module
+
+How do maintenance personnel operate the NGS (Nitrogen Generation System) on the ground?
+CMCF, Special Function
+
+What controls the NGS system operation? 
+one copy of the NGS hosted software application located in GPM4 in the CCR.
